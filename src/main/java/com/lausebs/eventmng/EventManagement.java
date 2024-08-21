@@ -4,6 +4,8 @@
 
 package com.lausebs.eventmng;
 
+import com.lausebs.eventmng.view.FramePrincipal;
+
 /**
  *
  * @author estigia
@@ -11,6 +13,7 @@ package com.lausebs.eventmng;
 public class EventManagement {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        FramePrincipal framePrinciopal = new FramePrincipal();
+        framePrinciopal.setVisible(true);
     }
 }
