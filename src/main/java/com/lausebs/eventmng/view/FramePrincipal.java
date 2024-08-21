@@ -4,6 +4,8 @@
  */
 package com.lausebs.eventmng.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estigia
@@ -15,6 +17,8 @@ public class FramePrincipal extends javax.swing.JFrame {
      */
     public FramePrincipal() {
         initComponents();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**
@@ -28,20 +32,119 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         barraMenu = new javax.swing.JMenuBar();
         mnArchivo = new javax.swing.JMenu();
+        mnISalir = new javax.swing.JMenuItem();
         mnConcierto = new javax.swing.JMenu();
+        mnIAñadirConcierto = new javax.swing.JMenuItem();
+        mnIBuscarConcierto = new javax.swing.JMenuItem();
+        mnIEliminarConcierto = new javax.swing.JMenuItem();
+        mnIListarConcierto = new javax.swing.JMenuItem();
+        mnICalcularAforoC = new javax.swing.JMenuItem();
         mnFeriaGastro = new javax.swing.JMenu();
+        mnIAñadirFeria = new javax.swing.JMenuItem();
+        mnIBuscarFeria = new javax.swing.JMenuItem();
+        mnIEliminarFeria = new javax.swing.JMenuItem();
+        mnIListarFerias = new javax.swing.JMenuItem();
+        mnICalcularAforoF = new javax.swing.JMenuItem();
+        mnArtista = new javax.swing.JMenu();
+        mnIAñadirArtista = new javax.swing.JMenuItem();
+        mnIListarArtistas = new javax.swing.JMenuItem();
+        mnAyuda = new javax.swing.JMenu();
+        mnIAcercaD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FramePrincipal");
 
         mnArchivo.setText("Archivo");
+
+        mnISalir.setText("Salir");
+        mnISalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnISalirActionPerformed(evt);
+            }
+        });
+        mnArchivo.add(mnISalir);
+
         barraMenu.add(mnArchivo);
 
         mnConcierto.setText("Concierto");
+
+        mnIAñadirConcierto.setText("Añadir Concierto");
+        mnIAñadirConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAñadirConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIAñadirConcierto);
+
+        mnIBuscarConcierto.setText("Buscar Concierto");
+        mnIBuscarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIBuscarConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIBuscarConcierto);
+
+        mnIEliminarConcierto.setText("Eliminar Concierto");
+        mnIEliminarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIEliminarConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIEliminarConcierto);
+
+        mnIListarConcierto.setText("Listar Conciertos");
+        mnConcierto.add(mnIListarConcierto);
+
+        mnICalcularAforoC.setText("Calcular aforo");
+        mnConcierto.add(mnICalcularAforoC);
+
         barraMenu.add(mnConcierto);
 
         mnFeriaGastro.setText("Feria");
+
+        mnIAñadirFeria.setText("Añadir Feria");
+        mnFeriaGastro.add(mnIAñadirFeria);
+
+        mnIBuscarFeria.setText("Buscar Feria");
+        mnFeriaGastro.add(mnIBuscarFeria);
+
+        mnIEliminarFeria.setText("Eliminar Feria");
+        mnFeriaGastro.add(mnIEliminarFeria);
+
+        mnIListarFerias.setText("Listar Ferias");
+        mnFeriaGastro.add(mnIListarFerias);
+
+        mnICalcularAforoF.setText("Calcular aforo");
+        mnFeriaGastro.add(mnICalcularAforoF);
+
         barraMenu.add(mnFeriaGastro);
+
+        mnArtista.setText("Artista");
+
+        mnIAñadirArtista.setText("Adicionar Artista");
+        mnIAñadirArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAñadirArtistaActionPerformed(evt);
+            }
+        });
+        mnArtista.add(mnIAñadirArtista);
+
+        mnIListarArtistas.setText("Listar Artistas");
+        mnArtista.add(mnIListarArtistas);
+
+        barraMenu.add(mnArtista);
+
+        mnAyuda.setText("Ayuda");
+
+        mnIAcercaD.setText("Acerca de ...");
+        mnIAcercaD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAcercaDActionPerformed(evt);
+            }
+        });
+        mnAyuda.add(mnIAcercaD);
+
+        barraMenu.add(mnAyuda);
 
         setJMenuBar(barraMenu);
 
@@ -49,15 +152,40 @@ public class FramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGap(0, 275, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGap(0, 317, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mnISalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnISalirActionPerformed
+       System.exit(0);              // TODO add your handling code here:
+    }//GEN-LAST:event_mnISalirActionPerformed
+
+    private void mnIBuscarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarConciertoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnIBuscarConciertoActionPerformed
+
+    private void mnIEliminarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarConciertoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnIEliminarConciertoActionPerformed
+
+    private void mnIAñadirArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirArtistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_mnIAñadirArtistaActionPerformed
+
+    private void mnIAñadirConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirConciertoActionPerformed
+        AñadirConcierto añadirConcierto = new AñadirConcierto();
+        añadirConcierto.setVisible(true);
+    }//GEN-LAST:event_mnIAñadirConciertoActionPerformed
+
+    private void mnIAcercaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAcercaDActionPerformed
+    JOptionPane.showMessageDialog(this, "Desarrollado por Laura Gomez & Sebastian Diaz \n                             Version 1.0");
+    }//GEN-LAST:event_mnIAcercaDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -97,7 +225,23 @@ public class FramePrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JMenu mnArchivo;
+    private javax.swing.JMenu mnArtista;
+    private javax.swing.JMenu mnAyuda;
     private javax.swing.JMenu mnConcierto;
     private javax.swing.JMenu mnFeriaGastro;
+    private javax.swing.JMenuItem mnIAcercaD;
+    private javax.swing.JMenuItem mnIAñadirArtista;
+    private javax.swing.JMenuItem mnIAñadirConcierto;
+    private javax.swing.JMenuItem mnIAñadirFeria;
+    private javax.swing.JMenuItem mnIBuscarConcierto;
+    private javax.swing.JMenuItem mnIBuscarFeria;
+    private javax.swing.JMenuItem mnICalcularAforoC;
+    private javax.swing.JMenuItem mnICalcularAforoF;
+    private javax.swing.JMenuItem mnIEliminarConcierto;
+    private javax.swing.JMenuItem mnIEliminarFeria;
+    private javax.swing.JMenuItem mnIListarArtistas;
+    private javax.swing.JMenuItem mnIListarConcierto;
+    private javax.swing.JMenuItem mnIListarFerias;
+    private javax.swing.JMenuItem mnISalir;
     // End of variables declaration//GEN-END:variables
 }

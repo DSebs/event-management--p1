@@ -8,16 +8,124 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Archivo"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnISalir">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Salir"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnISalirActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnConcierto">
           <Properties>
             <Property name="text" type="java.lang.String" value="Concierto"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIA&#xf1;adirConcierto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir Concierto"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIA&#xf1;adirConciertoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIBuscarConcierto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar Concierto"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIBuscarConciertoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIEliminarConcierto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eliminar Concierto"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIEliminarConciertoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIListarConcierto">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar Conciertos"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnICalcularAforoC">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Calcular aforo"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
         </Menu>
         <Menu class="javax.swing.JMenu" name="mnFeriaGastro">
           <Properties>
             <Property name="text" type="java.lang.String" value="Feria"/>
           </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIA&#xf1;adirFeria">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="A&#xf1;adir Feria"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIBuscarFeria">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Buscar Feria"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIEliminarFeria">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eliminar Feria"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIListarFerias">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar Ferias"/>
+              </Properties>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnICalcularAforoF">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Calcular aforo"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mnArtista">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Artista"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIA&#xf1;adirArtista">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Adicionar Artista"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIA&#xf1;adirArtistaActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIListarArtistas">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Listar Artistas"/>
+              </Properties>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="mnAyuda">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Ayuda"/>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="mnIAcercaD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Acerca de ..."/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIAcercaDActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
         </Menu>
       </SubComponents>
     </Menu>
@@ -46,12 +154,12 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="500" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="275" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="320" max="32767" attributes="0"/>
+          <EmptySpace min="0" pref="317" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
   </Layout>
