@@ -137,11 +137,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         mnAyuda.setText("Ayuda");
 
         mnIAcercaD.setText("Acerca de ...");
-        mnIAcercaD.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                mnIAcercaDActionPerformed(evt);
-            }
-        });
         mnAyuda.add(mnIAcercaD);
 
         barraMenu.add(mnAyuda);
@@ -167,7 +162,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnISalirActionPerformed
 
     private void mnIBuscarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarConciertoActionPerformed
-        // TODO add your handling code here:
+     BuscarConcierto buscarConcierto =  new BuscarConcierto();
+     buscarConcierto.setVisible(true);
     }//GEN-LAST:event_mnIBuscarConciertoActionPerformed
 
     private void mnIEliminarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarConciertoActionPerformed
@@ -182,10 +178,6 @@ public class FramePrincipal extends javax.swing.JFrame {
         AñadirConcierto añadirConcierto = new AñadirConcierto();
         añadirConcierto.setVisible(true);
     }//GEN-LAST:event_mnIAñadirConciertoActionPerformed
-
-    private void mnIAcercaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAcercaDActionPerformed
-    JOptionPane.showMessageDialog(this, "Desarrollado por Laura Gomez & Sebastian Diaz \n                             Version 1.0");
-    }//GEN-LAST:event_mnIAcercaDActionPerformed
 
     /**
      * @param args the command line arguments
