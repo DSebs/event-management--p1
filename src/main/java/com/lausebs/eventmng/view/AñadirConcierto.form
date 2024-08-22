@@ -32,7 +32,6 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="64" max="-2" attributes="0"/>
                       <Component id="btnAñadir" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="73" max="-2" attributes="0"/>
                   </Group>
                   <Component id="lblTitulo" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">

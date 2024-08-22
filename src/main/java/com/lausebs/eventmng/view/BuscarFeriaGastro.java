@@ -8,12 +8,12 @@ package com.lausebs.eventmng.view;
  *
  * @author estigia
  */
-public class EliminarConcierto extends javax.swing.JFrame {
+public class BuscarFeriaGastro extends javax.swing.JFrame {
 
     /**
-     * Creates new form EliminarConcierto
+     * Creates new form BuscarFeriaGastro
      */
-    public EliminarConcierto() {
+    public BuscarFeriaGastro() {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
@@ -30,25 +30,22 @@ public class EliminarConcierto extends javax.swing.JFrame {
 
         txtFBuscarConcierto = new javax.swing.JTextField();
         pnlCenter = new javax.swing.JPanel();
-        lblNLocalidades = new javax.swing.JLabel();
         txtFUbicacion = new javax.swing.JTextField();
-        txtFNLocalidades = new javax.swing.JTextField();
         txtFPrecio = new javax.swing.JTextField();
-        lblArtista = new javax.swing.JLabel();
         txtFFechaDIa = new javax.swing.JTextField();
         txtFFechaMes = new javax.swing.JTextField();
         txtFFechaAño = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
-        lblTipoMusica = new javax.swing.JLabel();
         txtFNombre = new javax.swing.JTextField();
-        txtFTipoMusica = new javax.swing.JTextField();
         lblFecha = new javax.swing.JLabel();
         lblUbicacion = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
-        txtFNLocalidades1 = new javax.swing.JTextField();
-        lblTitulo = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JButton();
+        lblTipoCocina = new javax.swing.JLabel();
+        txtFNStands = new javax.swing.JTextField();
+        txtFTipoCocina = new javax.swing.JTextField();
+        lblNStands = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
+        lblTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -61,19 +58,10 @@ public class EliminarConcierto extends javax.swing.JFrame {
 
         pnlCenter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblNLocalidades.setText("Nª Localidades");
-
         txtFUbicacion.setEditable(false);
         txtFUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFUbicacionActionPerformed(evt);
-            }
-        });
-
-        txtFNLocalidades.setEditable(false);
-        txtFNLocalidades.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFNLocalidadesActionPerformed(evt);
             }
         });
 
@@ -83,8 +71,6 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 txtFPrecioActionPerformed(evt);
             }
         });
-
-        lblArtista.setText("Artista");
 
         txtFFechaDIa.setEditable(false);
         txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
@@ -109,19 +95,10 @@ public class EliminarConcierto extends javax.swing.JFrame {
 
         lblNombre.setText("Nombre");
 
-        lblTipoMusica.setText("Tipo de musica");
-
         txtFNombre.setEditable(false);
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNombreActionPerformed(evt);
-            }
-        });
-
-        txtFTipoMusica.setEditable(false);
-        txtFTipoMusica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFTipoMusicaActionPerformed(evt);
             }
         });
 
@@ -131,12 +108,23 @@ public class EliminarConcierto extends javax.swing.JFrame {
 
         lblPrecio.setText("Precio");
 
-        txtFNLocalidades1.setEditable(false);
-        txtFNLocalidades1.addActionListener(new java.awt.event.ActionListener() {
+        lblTipoCocina.setText("Tipo de cocina");
+
+        txtFNStands.setEditable(false);
+        txtFNStands.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFNLocalidades1ActionPerformed(evt);
+                txtFNStandsActionPerformed(evt);
             }
         });
+
+        txtFTipoCocina.setEditable(false);
+        txtFTipoCocina.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFTipoCocinaActionPerformed(evt);
+            }
+        });
+
+        lblNStands.setText("Nª Stands");
 
         javax.swing.GroupLayout pnlCenterLayout = new javax.swing.GroupLayout(pnlCenter);
         pnlCenter.setLayout(pnlCenterLayout);
@@ -145,43 +133,28 @@ public class EliminarConcierto extends javax.swing.JFrame {
             .addGroup(pnlCenterLayout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pnlCenterLayout.createSequentialGroup()
-                        .addComponent(lblUbicacion)
-                        .addGap(47, 47, 47)
-                        .addComponent(txtFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlCenterLayout.createSequentialGroup()
-                        .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblNombre)
-                            .addComponent(lblFecha))
-                        .addGap(56, 56, 56)
-                        .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlCenterLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(lblPrecio)
+                    .addComponent(lblUbicacion)
+                    .addComponent(lblFecha)
+                    .addComponent(lblNombre)
+                    .addComponent(lblTipoCocina)
+                    .addComponent(lblNStands))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(pnlCenterLayout.createSequentialGroup()
-                            .addComponent(lblPrecio)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCenterLayout.createSequentialGroup()
-                                .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblNLocalidades)
-                                    .addComponent(lblArtista))
-                                .addGap(18, 18, 18)
-                                .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFNLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFNLocalidades1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCenterLayout.createSequentialGroup()
-                                .addComponent(lblTipoMusica)
-                                .addGap(18, 18, 18)
-                                .addComponent(txtFTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                            .addGap(6, 6, 6)
+                            .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlCenterLayout.setVerticalGroup(
             pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -193,9 +166,9 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
-                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE))
+                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE)
+                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUbicacion)
@@ -206,29 +179,14 @@ public class EliminarConcierto extends javax.swing.JFrame {
                     .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblTipoMusica)
-                    .addComponent(txtFTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(lblTipoCocina)
+                    .addComponent(txtFTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblNLocalidades)
-                    .addComponent(txtFNLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblArtista)
-                    .addComponent(txtFNLocalidades1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28))
+                    .addComponent(lblNStands)
+                    .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(32, 32, 32))
         );
-
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Eliminar Concierto");
-
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
-            }
-        });
 
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -237,28 +195,24 @@ public class EliminarConcierto extends javax.swing.JFrame {
             }
         });
 
+        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Buscar Feria Gastro");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(52, 52, 52)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(38, 38, 38)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(22, 22, 22)
-                                .addComponent(lblTitulo))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(14, 14, 14)
-                                .addComponent(btnBuscar)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(128, 128, 128)
-                        .addComponent(btnEliminar)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addComponent(btnBuscar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -269,10 +223,8 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
-                .addGap(16, 16, 16)
+                .addGap(18, 18, 18)
                 .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(btnEliminar)
                 .addContainerGap())
         );
 
@@ -286,10 +238,6 @@ public class EliminarConcierto extends javax.swing.JFrame {
     private void txtFUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFUbicacionActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFUbicacionActionPerformed
-
-    private void txtFNLocalidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNLocalidadesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFNLocalidadesActionPerformed
 
     private void txtFPrecioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFPrecioActionPerformed
         // TODO add your handling code here:
@@ -311,21 +259,17 @@ public class EliminarConcierto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFNombreActionPerformed
 
-    private void txtFTipoMusicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFTipoMusicaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFTipoMusicaActionPerformed
-
-    private void txtFNLocalidades1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNLocalidades1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFNLocalidades1ActionPerformed
-
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtFNStandsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNStandsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFNStandsActionPerformed
+
+    private void txtFTipoCocinaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFTipoCocinaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFTipoCocinaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -344,33 +288,31 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(BuscarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminarConcierto().setVisible(true);
+                new BuscarFeriaGastro().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JLabel lblArtista;
     private javax.swing.JLabel lblFecha;
-    private javax.swing.JLabel lblNLocalidades;
+    private javax.swing.JLabel lblNStands;
     private javax.swing.JLabel lblNombre;
     private javax.swing.JLabel lblPrecio;
-    private javax.swing.JLabel lblTipoMusica;
+    private javax.swing.JLabel lblTipoCocina;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUbicacion;
     private javax.swing.JPanel pnlCenter;
@@ -378,11 +320,10 @@ public class EliminarConcierto extends javax.swing.JFrame {
     private javax.swing.JTextField txtFFechaAño;
     private javax.swing.JTextField txtFFechaDIa;
     private javax.swing.JTextField txtFFechaMes;
-    private javax.swing.JTextField txtFNLocalidades;
-    private javax.swing.JTextField txtFNLocalidades1;
+    private javax.swing.JTextField txtFNStands;
     private javax.swing.JTextField txtFNombre;
     private javax.swing.JTextField txtFPrecio;
-    private javax.swing.JTextField txtFTipoMusica;
+    private javax.swing.JTextField txtFTipoCocina;
     private javax.swing.JTextField txtFUbicacion;
     // End of variables declaration//GEN-END:variables
 }

@@ -72,21 +72,33 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="A&#xf1;adir Feria"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIA&#xf1;adirFeriaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnIBuscarFeria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Buscar Feria"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIBuscarFeriaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnIEliminarFeria">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Eliminar Feria"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIEliminarFeriaActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnIListarFerias">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Listar Ferias"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIListarFeriasActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="mnICalcularAforoF">
               <Properties>
@@ -124,6 +136,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Acerca de ..."/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="mnIAcercaDActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>

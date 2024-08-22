@@ -108,15 +108,35 @@ public class FramePrincipal extends javax.swing.JFrame {
         mnFeriaGastro.setText("Feria");
 
         mnIAñadirFeria.setText("Añadir Feria");
+        mnIAñadirFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAñadirFeriaActionPerformed(evt);
+            }
+        });
         mnFeriaGastro.add(mnIAñadirFeria);
 
         mnIBuscarFeria.setText("Buscar Feria");
+        mnIBuscarFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIBuscarFeriaActionPerformed(evt);
+            }
+        });
         mnFeriaGastro.add(mnIBuscarFeria);
 
         mnIEliminarFeria.setText("Eliminar Feria");
+        mnIEliminarFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIEliminarFeriaActionPerformed(evt);
+            }
+        });
         mnFeriaGastro.add(mnIEliminarFeria);
 
         mnIListarFerias.setText("Listar Ferias");
+        mnIListarFerias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIListarFeriasActionPerformed(evt);
+            }
+        });
         mnFeriaGastro.add(mnIListarFerias);
 
         mnICalcularAforoF.setText("Calcular aforo");
@@ -142,6 +162,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         mnAyuda.setText("Ayuda");
 
         mnIAcercaD.setText("Acerca de ...");
+        mnIAcercaD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAcercaDActionPerformed(evt);
+            }
+        });
         mnAyuda.add(mnIAcercaD);
 
         barraMenu.add(mnAyuda);
@@ -189,6 +214,31 @@ public class FramePrincipal extends javax.swing.JFrame {
         ListarConcierto listarConcierto = new ListarConcierto();
         listarConcierto.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_mnIListarConciertoActionPerformed
+
+    private void mnIAcercaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAcercaDActionPerformed
+                JOptionPane.showMessageDialog(this, "Desarrollado por Laura Gomez & Sebastian Diaz \n                              Version 1.0");
+
+    }//GEN-LAST:event_mnIAcercaDActionPerformed
+
+    private void mnIAñadirFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirFeriaActionPerformed
+    AñadirFeriaGastro añadirFeria = new AñadirFeriaGastro();
+    añadirFeria.setVisible(true);
+    }//GEN-LAST:event_mnIAñadirFeriaActionPerformed
+
+    private void mnIBuscarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarFeriaActionPerformed
+     BuscarFeriaGastro buscarFeria = new BuscarFeriaGastro();   
+     buscarFeria.setVisible(true);
+    }//GEN-LAST:event_mnIBuscarFeriaActionPerformed
+
+    private void mnIEliminarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarFeriaActionPerformed
+    EliminarFeriaGastro eliminarFeria = new  EliminarFeriaGastro();  
+    eliminarFeria.setVisible(true);
+    }//GEN-LAST:event_mnIEliminarFeriaActionPerformed
+
+    private void mnIListarFeriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarFeriasActionPerformed
+    ListarFeriaGastro listaFeria = new ListarFeriaGastro(); 
+    listaFeria.setVisible(true);
+    }//GEN-LAST:event_mnIListarFeriasActionPerformed
 
     /**
      * @param args the command line arguments
