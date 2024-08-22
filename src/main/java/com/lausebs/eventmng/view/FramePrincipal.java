@@ -93,6 +93,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         mnConcierto.add(mnIEliminarConcierto);
 
         mnIListarConcierto.setText("Listar Conciertos");
+        mnIListarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIListarConciertoActionPerformed(evt);
+            }
+        });
         mnConcierto.add(mnIListarConcierto);
 
         mnICalcularAforoC.setText("Calcular aforo");
@@ -167,7 +172,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIBuscarConciertoActionPerformed
 
     private void mnIEliminarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarConciertoActionPerformed
-        // TODO add your handling code here:
+      EliminarConcierto eliminarConcierto = new EliminarConcierto();  
+      eliminarConcierto.setVisible(true);
     }//GEN-LAST:event_mnIEliminarConciertoActionPerformed
 
     private void mnIAñadirArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirArtistaActionPerformed
@@ -178,6 +184,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         AñadirConcierto añadirConcierto = new AñadirConcierto();
         añadirConcierto.setVisible(true);
     }//GEN-LAST:event_mnIAñadirConciertoActionPerformed
+
+    private void mnIListarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarConciertoActionPerformed
+        ListarConcierto listarConcierto = new ListarConcierto();
+        listarConcierto.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_mnIListarConciertoActionPerformed
 
     /**
      * @param args the command line arguments
