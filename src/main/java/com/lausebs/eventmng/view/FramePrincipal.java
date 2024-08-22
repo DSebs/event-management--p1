@@ -53,6 +53,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FramePrincipal");
+        setUndecorated(true);
 
         mnArchivo.setText("Archivo");
 
@@ -155,6 +156,11 @@ public class FramePrincipal extends javax.swing.JFrame {
         mnArtista.add(mnIAñadirArtista);
 
         mnIListarArtistas.setText("Listar Artistas");
+        mnIListarArtistas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIListarArtistasActionPerformed(evt);
+            }
+        });
         mnArtista.add(mnIListarArtistas);
 
         barraMenu.add(mnArtista);
@@ -202,7 +208,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIEliminarConciertoActionPerformed
 
     private void mnIAñadirArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirArtistaActionPerformed
-        // TODO add your handling code here:
+     AgregarArtista agregarArtista = new AgregarArtista();   
+     agregarArtista.setVisible(true);
     }//GEN-LAST:event_mnIAñadirArtistaActionPerformed
 
     private void mnIAñadirConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirConciertoActionPerformed
@@ -239,6 +246,11 @@ public class FramePrincipal extends javax.swing.JFrame {
     ListarFeriaGastro listaFeria = new ListarFeriaGastro(); 
     listaFeria.setVisible(true);
     }//GEN-LAST:event_mnIListarFeriasActionPerformed
+
+    private void mnIListarArtistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarArtistasActionPerformed
+     ListarArtista listarArtista = new ListarArtista();   
+     listarArtista.setVisible(true);
+    }//GEN-LAST:event_mnIListarArtistasActionPerformed
 
     /**
      * @param args the command line arguments

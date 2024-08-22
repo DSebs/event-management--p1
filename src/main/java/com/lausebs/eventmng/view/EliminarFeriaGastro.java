@@ -4,6 +4,8 @@
  */
 package com.lausebs.eventmng.view;
 
+import java.awt.Color;
+
 /**
  *
  * @author estigia
@@ -30,7 +32,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
 
         btnBuscar = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
-        txtFBuscarConcierto = new javax.swing.JTextField();
+        txtFBuscarFeriaGastro = new javax.swing.JTextField();
         pnlCenter = new javax.swing.JPanel();
         txtFUbicacion = new javax.swing.JTextField();
         txtFPrecio = new javax.swing.JTextField();
@@ -61,10 +63,16 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Eliminar Feria Gastro");
 
-        txtFBuscarConcierto.setText("Digite el nombre");
-        txtFBuscarConcierto.addActionListener(new java.awt.event.ActionListener() {
+        txtFBuscarFeriaGastro.setForeground(new java.awt.Color(153, 153, 153));
+        txtFBuscarFeriaGastro.setText("Digite el nombre");
+        txtFBuscarFeriaGastro.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtFBuscarFeriaGastroMousePressed(evt);
+            }
+        });
+        txtFBuscarFeriaGastro.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFBuscarConciertoActionPerformed(evt);
+                txtFBuscarFeriaGastroActionPerformed(evt);
             }
         });
 
@@ -220,7 +228,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnBuscar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(txtFBuscarFeriaGastro, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblTitulo)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(123, 123, 123)
@@ -234,7 +242,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtFBuscarFeriaGastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
                 .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -250,9 +258,9 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtFBuscarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoActionPerformed
+    private void txtFBuscarFeriaGastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFBuscarFeriaGastroActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFBuscarConciertoActionPerformed
+    }//GEN-LAST:event_txtFBuscarFeriaGastroActionPerformed
 
     private void txtFUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFUbicacionActionPerformed
         // TODO add your handling code here:
@@ -289,6 +297,11 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void txtFBuscarFeriaGastroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarFeriaGastroMousePressed
+     txtFBuscarFeriaGastro.setText("");
+     txtFBuscarFeriaGastro.setForeground(Color.black);         // TODO add your handling code here:
+    }//GEN-LAST:event_txtFBuscarFeriaGastroMousePressed
 
     /**
      * @param args the command line arguments
@@ -336,7 +349,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUbicacion;
     private javax.swing.JPanel pnlCenter;
-    private javax.swing.JTextField txtFBuscarConcierto;
+    private javax.swing.JTextField txtFBuscarFeriaGastro;
     private javax.swing.JTextField txtFFechaAño;
     private javax.swing.JTextField txtFFechaDIa;
     private javax.swing.JTextField txtFFechaMes;

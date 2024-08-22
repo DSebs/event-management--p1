@@ -4,6 +4,8 @@
  */
 package com.lausebs.eventmng.view;
 
+import java.awt.Color;
+
 /**
  *
  * @author estigia
@@ -52,7 +54,13 @@ public class EliminarConcierto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        txtFBuscarConcierto.setForeground(new java.awt.Color(153, 153, 153));
         txtFBuscarConcierto.setText("Digite el nombre");
+        txtFBuscarConcierto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                txtFBuscarConciertoMousePressed(evt);
+            }
+        });
         txtFBuscarConcierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFBuscarConciertoActionPerformed(evt);
@@ -326,6 +334,11 @@ public class EliminarConcierto extends javax.swing.JFrame {
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtFBuscarConciertoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoMousePressed
+     txtFBuscarConcierto.setText("");
+     txtFBuscarConcierto.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFBuscarConciertoMousePressed
 
     /**
      * @param args the command line arguments
