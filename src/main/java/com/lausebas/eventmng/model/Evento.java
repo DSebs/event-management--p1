@@ -4,7 +4,9 @@
  */
 package com.lausebas.eventmng.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.ArrayList;
+
 
 /**
  *
@@ -13,11 +15,11 @@ import java.util.Date;
 public abstract class Evento {
    
     private String nombre;
-    private Date fecha;
+    private LocalDate fecha;
     private String ubicacion;
     private double precioEntrada;
 
-    public Evento(String nombre, Date fecha, String ubicacion, double precioEntrada) {
+    public Evento(String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.ubicacion = ubicacion;
@@ -33,11 +35,11 @@ public abstract class Evento {
         this.nombre = nombre;
     }
 
-    public Date getFecha() {
+    public LocalDate getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDate fecha) {
         this.fecha = fecha;
     }
 
@@ -59,6 +61,11 @@ public abstract class Evento {
     
     
     public abstract int calcularAforo();
+
+    public void remove(ArrayList<Evento> eventos) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+    
     
     
     

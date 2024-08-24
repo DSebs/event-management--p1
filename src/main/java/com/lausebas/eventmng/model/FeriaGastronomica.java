@@ -4,7 +4,8 @@
  */
 package com.lausebas.eventmng.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /**
  *
@@ -17,7 +18,7 @@ public class FeriaGastronomica extends  Evento implements Expandible{
     
     public final static int PERSONAS_POR_STANDS = 10;
 
-    public FeriaGastronomica(String tipoCocina, int numStands, String nombre, Date fecha, String ubicacion, double precioEntrada) {
+    public FeriaGastronomica(String tipoCocina, int numStands, String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
         super(nombre, fecha, ubicacion, precioEntrada);
         this.tipoCocina = tipoCocina;
         this.numStands = numStands;
@@ -44,12 +45,12 @@ public class FeriaGastronomica extends  Evento implements Expandible{
     
     @Override
     public int calcularAforo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return numStands * PERSONAS_POR_STANDS;
     }
 
     @Override
     public void aumentarNumStands() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        numStands += EXTRA_DE_STANDS;
     }
     
     

@@ -4,7 +4,8 @@
  */
 package com.lausebas.eventmng.model;
 
-import java.util.Date;
+import java.time.LocalDate;
+
 
 /**
  *
@@ -14,20 +15,29 @@ public class Concierto extends Evento {
 
     @Override
     public int calcularAforo() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return localidades * PERSONAS_POR_LOCALIDAD;
     }
     
     private String tipoMusica;
     private int localidades;
+    private Artista artista;
     
     public final static int PERSONAS_POR_LOCALIDAD = 135;
 
-    public Concierto(String tipoMusica, int localidades, String nombre, Date fecha, String ubicacion, double precioEntrada) {
+    public Concierto(String tipoMusica, int localidades, String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
         super(nombre, fecha, ubicacion, precioEntrada);
         this.tipoMusica = tipoMusica;
         this.localidades = localidades;
         
         
+    }
+
+    public Artista getArtista() {
+        return artista;
+    }
+
+    public void setArtista(Artista artista) {
+        this.artista = artista;
     }
 
     public String getTipoMusica() {
