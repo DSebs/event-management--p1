@@ -4,6 +4,8 @@
  */
 package com.lausebs.eventmng.view;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estigia
@@ -15,6 +17,8 @@ public class FramePrincipal extends javax.swing.JFrame {
      */
     public FramePrincipal() {
         initComponents();
+        setLocationRelativeTo(this);
+        setResizable(false);
     }
 
     /**
@@ -26,22 +30,197 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblIcon = new javax.swing.JLabel();
+        lblPNombre = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         mnArchivo = new javax.swing.JMenu();
+        mnISalir = new javax.swing.JMenuItem();
         mnConcierto = new javax.swing.JMenu();
+        mnIAñadirConcierto = new javax.swing.JMenuItem();
+        mnIBuscarConcierto = new javax.swing.JMenuItem();
+        mnIEliminarConcierto = new javax.swing.JMenuItem();
+        mnIListarConcierto = new javax.swing.JMenuItem();
+        mnICalcularAforoC = new javax.swing.JMenuItem();
         mnFeriaGastro = new javax.swing.JMenu();
+        mnIAñadirFeria = new javax.swing.JMenuItem();
+        mnIBuscarFeria = new javax.swing.JMenuItem();
+        mnIEliminarFeria = new javax.swing.JMenuItem();
+        mnIListarFerias = new javax.swing.JMenuItem();
+        mnICalcularAforoF = new javax.swing.JMenuItem();
+        mnArtista = new javax.swing.JMenu();
+        mnIAñadirArtista = new javax.swing.JMenuItem();
+        mnIListarArtistas = new javax.swing.JMenuItem();
+        mnAyuda = new javax.swing.JMenu();
+        mnIAcercaD = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FramePrincipal");
+        setUndecorated(true);
 
+        lblIcon.setForeground(new java.awt.Color(5, 44, 77));
+        lblIcon.setIcon(new javax.swing.ImageIcon("/home/estigia/NetBeansProjects/EventManagement/src/main/java/com/lausebs/eventmng/data/logoMainF.png")); // NOI18N
+
+        lblPNombre.setFont(new java.awt.Font("URW Gothic", 1, 24)); // NOI18N
+        lblPNombre.setForeground(new java.awt.Color(5, 44, 77));
+        lblPNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPNombre.setText("eventMANAGER");
+
+        barraMenu.setBackground(new java.awt.Color(5, 44, 77));
+        barraMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        barraMenu.setForeground(new java.awt.Color(255, 255, 255));
+
+        mnArchivo.setBorder(null);
+        mnArchivo.setForeground(new java.awt.Color(255, 255, 255));
         mnArchivo.setText("Archivo");
+
+        mnISalir.setForeground(new java.awt.Color(5, 44, 77));
+        mnISalir.setText("Salir");
+        mnISalir.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnISalirActionPerformed(evt);
+            }
+        });
+        mnArchivo.add(mnISalir);
+
         barraMenu.add(mnArchivo);
 
+        mnConcierto.setForeground(new java.awt.Color(255, 255, 255));
         mnConcierto.setText("Concierto");
+
+        mnIAñadirConcierto.setForeground(new java.awt.Color(5, 44, 77));
+        mnIAñadirConcierto.setText("Añadir Concierto");
+        mnIAñadirConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAñadirConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIAñadirConcierto);
+
+        mnIBuscarConcierto.setForeground(new java.awt.Color(5, 44, 77));
+        mnIBuscarConcierto.setText("Buscar Concierto");
+        mnIBuscarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIBuscarConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIBuscarConcierto);
+
+        mnIEliminarConcierto.setForeground(new java.awt.Color(5, 44, 77));
+        mnIEliminarConcierto.setText("Eliminar Concierto");
+        mnIEliminarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIEliminarConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIEliminarConcierto);
+
+        mnIListarConcierto.setForeground(new java.awt.Color(5, 44, 77));
+        mnIListarConcierto.setText("Listar Conciertos");
+        mnIListarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIListarConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnIListarConcierto);
+
+        mnICalcularAforoC.setForeground(new java.awt.Color(5, 44, 77));
+        mnICalcularAforoC.setText("Calcular aforo");
+        mnICalcularAforoC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnICalcularAforoCActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnICalcularAforoC);
+
         barraMenu.add(mnConcierto);
 
+        mnFeriaGastro.setForeground(new java.awt.Color(255, 255, 255));
         mnFeriaGastro.setText("Feria");
+
+        mnIAñadirFeria.setForeground(new java.awt.Color(5, 44, 77));
+        mnIAñadirFeria.setText("Añadir Feria");
+        mnIAñadirFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAñadirFeriaActionPerformed(evt);
+            }
+        });
+        mnFeriaGastro.add(mnIAñadirFeria);
+
+        mnIBuscarFeria.setForeground(new java.awt.Color(5, 44, 77));
+        mnIBuscarFeria.setText("Buscar Feria");
+        mnIBuscarFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIBuscarFeriaActionPerformed(evt);
+            }
+        });
+        mnFeriaGastro.add(mnIBuscarFeria);
+
+        mnIEliminarFeria.setForeground(new java.awt.Color(5, 44, 77));
+        mnIEliminarFeria.setText("Eliminar Feria");
+        mnIEliminarFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIEliminarFeriaActionPerformed(evt);
+            }
+        });
+        mnFeriaGastro.add(mnIEliminarFeria);
+
+        mnIListarFerias.setForeground(new java.awt.Color(5, 44, 77));
+        mnIListarFerias.setText("Listar Ferias");
+        mnIListarFerias.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIListarFeriasActionPerformed(evt);
+            }
+        });
+        mnFeriaGastro.add(mnIListarFerias);
+
+        mnICalcularAforoF.setForeground(new java.awt.Color(5, 44, 77));
+        mnICalcularAforoF.setText("Calcular aforo");
+        mnICalcularAforoF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnICalcularAforoFActionPerformed(evt);
+            }
+        });
+        mnFeriaGastro.add(mnICalcularAforoF);
+
         barraMenu.add(mnFeriaGastro);
+
+        mnArtista.setForeground(new java.awt.Color(255, 255, 255));
+        mnArtista.setText("Artista");
+
+        mnIAñadirArtista.setForeground(new java.awt.Color(5, 44, 77));
+        mnIAñadirArtista.setText("Adicionar Artista");
+        mnIAñadirArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAñadirArtistaActionPerformed(evt);
+            }
+        });
+        mnArtista.add(mnIAñadirArtista);
+
+        mnIListarArtistas.setForeground(new java.awt.Color(5, 44, 77));
+        mnIListarArtistas.setText("Listar Artistas");
+        mnIListarArtistas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIListarArtistasActionPerformed(evt);
+            }
+        });
+        mnArtista.add(mnIListarArtistas);
+
+        barraMenu.add(mnArtista);
+
+        mnAyuda.setBackground(new java.awt.Color(5, 44, 77));
+        mnAyuda.setForeground(new java.awt.Color(255, 255, 255));
+        mnAyuda.setText("Ayuda");
+
+        mnIAcercaD.setForeground(new java.awt.Color(5, 44, 77));
+        mnIAcercaD.setText("Acerca de ...");
+        mnIAcercaD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIAcercaDActionPerformed(evt);
+            }
+        });
+        mnAyuda.add(mnIAcercaD);
+
+        barraMenu.add(mnAyuda);
 
         setJMenuBar(barraMenu);
 
@@ -49,15 +228,96 @@ public class FramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblPNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 320, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void mnISalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnISalirActionPerformed
+       System.exit(0);              // TODO add your handling code here:
+    }//GEN-LAST:event_mnISalirActionPerformed
+
+    private void mnIBuscarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarConciertoActionPerformed
+     BuscarConcierto buscarConcierto =  new BuscarConcierto();
+     buscarConcierto.setVisible(true);
+    }//GEN-LAST:event_mnIBuscarConciertoActionPerformed
+
+    private void mnIEliminarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarConciertoActionPerformed
+      EliminarConcierto eliminarConcierto = new EliminarConcierto();  
+      eliminarConcierto.setVisible(true);
+    }//GEN-LAST:event_mnIEliminarConciertoActionPerformed
+
+    private void mnIAñadirArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirArtistaActionPerformed
+     AgregarArtista agregarArtista = new AgregarArtista();   
+     agregarArtista.setVisible(true);
+    }//GEN-LAST:event_mnIAñadirArtistaActionPerformed
+
+    private void mnIAñadirConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirConciertoActionPerformed
+        AñadirConcierto añadirConcierto = new AñadirConcierto();
+        añadirConcierto.setVisible(true);
+    }//GEN-LAST:event_mnIAñadirConciertoActionPerformed
+
+    private void mnIListarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarConciertoActionPerformed
+        ListarConcierto listarConcierto = new ListarConcierto();
+        listarConcierto.setVisible(true);// TODO add your handling code here:
+    }//GEN-LAST:event_mnIListarConciertoActionPerformed
+
+    private void mnIAcercaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAcercaDActionPerformed
+                JOptionPane.showMessageDialog(this, "Desarrollado por Laura Gomez & Sebastian Diaz \n                              Version 1.0");
+
+    }//GEN-LAST:event_mnIAcercaDActionPerformed
+
+    private void mnIAñadirFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirFeriaActionPerformed
+    AñadirFeriaGastro añadirFeria = new AñadirFeriaGastro();
+    añadirFeria.setVisible(true);
+    }//GEN-LAST:event_mnIAñadirFeriaActionPerformed
+
+    private void mnIBuscarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarFeriaActionPerformed
+     BuscarFeriaGastro buscarFeria = new BuscarFeriaGastro();   
+     buscarFeria.setVisible(true);
+    }//GEN-LAST:event_mnIBuscarFeriaActionPerformed
+
+    private void mnIEliminarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarFeriaActionPerformed
+    EliminarFeriaGastro eliminarFeria = new  EliminarFeriaGastro();  
+    eliminarFeria.setVisible(true);
+    }//GEN-LAST:event_mnIEliminarFeriaActionPerformed
+
+    private void mnIListarFeriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarFeriasActionPerformed
+    ListarFeriaGastro listaFeria = new ListarFeriaGastro(); 
+    listaFeria.setVisible(true);
+    }//GEN-LAST:event_mnIListarFeriasActionPerformed
+
+    private void mnIListarArtistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarArtistasActionPerformed
+     ListarArtista listarArtista = new ListarArtista();   
+     listarArtista.setVisible(true);
+    }//GEN-LAST:event_mnIListarArtistasActionPerformed
+
+    private void mnICalcularAforoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnICalcularAforoCActionPerformed
+    CalcularAforoC calcularAC = new CalcularAforoC(); 
+    calcularAC.setVisible(true);
+    }//GEN-LAST:event_mnICalcularAforoCActionPerformed
+
+    private void mnICalcularAforoFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnICalcularAforoFActionPerformed
+     CalcularAforoF calcularAF = new CalcularAforoF(); 
+    calcularAF.setVisible(true);
+    }//GEN-LAST:event_mnICalcularAforoFActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,8 +356,26 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JLabel lblIcon;
+    private javax.swing.JLabel lblPNombre;
     private javax.swing.JMenu mnArchivo;
+    private javax.swing.JMenu mnArtista;
+    private javax.swing.JMenu mnAyuda;
     private javax.swing.JMenu mnConcierto;
     private javax.swing.JMenu mnFeriaGastro;
+    private javax.swing.JMenuItem mnIAcercaD;
+    private javax.swing.JMenuItem mnIAñadirArtista;
+    private javax.swing.JMenuItem mnIAñadirConcierto;
+    private javax.swing.JMenuItem mnIAñadirFeria;
+    private javax.swing.JMenuItem mnIBuscarConcierto;
+    private javax.swing.JMenuItem mnIBuscarFeria;
+    private javax.swing.JMenuItem mnICalcularAforoC;
+    private javax.swing.JMenuItem mnICalcularAforoF;
+    private javax.swing.JMenuItem mnIEliminarConcierto;
+    private javax.swing.JMenuItem mnIEliminarFeria;
+    private javax.swing.JMenuItem mnIListarArtistas;
+    private javax.swing.JMenuItem mnIListarConcierto;
+    private javax.swing.JMenuItem mnIListarFerias;
+    private javax.swing.JMenuItem mnISalir;
     // End of variables declaration//GEN-END:variables
 }
