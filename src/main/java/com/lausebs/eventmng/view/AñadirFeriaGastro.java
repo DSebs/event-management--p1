@@ -44,73 +44,101 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         lblNStands = new javax.swing.JLabel();
         lblUbicacion = new javax.swing.JLabel();
         btnAñadir = new javax.swing.JButton();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
+        txtFNStands.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNStands.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNStands.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNStandsActionPerformed(evt);
             }
         });
 
+        lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
         lblPrecio.setText("Precio");
 
+        txtFUbicacion.setBackground(new java.awt.Color(185, 209, 226));
+        txtFUbicacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFUbicacionActionPerformed(evt);
             }
         });
 
+        txtFPrecio.setBackground(new java.awt.Color(185, 209, 226));
+        txtFPrecio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFPrecioActionPerformed(evt);
             }
         });
 
+        txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaDIaActionPerformed(evt);
             }
         });
 
+        txtFFechaMes.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaMesActionPerformed(evt);
             }
         });
 
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Añadir Feria Gastro");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
+        txtFFechaAño.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaAño.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaAñoActionPerformed(evt);
             }
         });
 
+        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
 
+        lblTipoCocina.setForeground(new java.awt.Color(5, 44, 77));
         lblTipoCocina.setText("Tipo de cocina");
 
+        txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNombreActionPerformed(evt);
             }
         });
 
+        txtFTipoCocina.setBackground(new java.awt.Color(185, 209, 226));
+        txtFTipoCocina.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFTipoCocina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFTipoCocinaActionPerformed(evt);
             }
         });
 
+        lblFecha.setForeground(new java.awt.Color(5, 44, 77));
         lblFecha.setText("Fecha");
 
+        lblNStands.setForeground(new java.awt.Color(5, 44, 77));
         lblNStands.setText("Nª Stands");
 
+        lblUbicacion.setForeground(new java.awt.Color(5, 44, 77));
         lblUbicacion.setText("Ubicacion");
 
+        btnAñadir.setBackground(new java.awt.Color(5, 44, 77));
+        btnAñadir.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
+        btnAñadir.setForeground(new java.awt.Color(255, 255, 255));
         btnAñadir.setText("Añadir");
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,52 +146,63 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
             }
         });
 
+        jCheckBox1.setForeground(new java.awt.Color(5, 44, 77));
+        jCheckBox1.setText("Expandible");
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(lblTitulo)
-                .addGap(28, 28, 28))
             .addGroup(layout.createSequentialGroup()
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addComponent(lblPrecio)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblNStands)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblTipoCocina)
+                            .addGap(18, 18, 18)
+                            .addComponent(txtFTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(lblUbicacion)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(txtFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(lblNombre)
+                                .addComponent(lblFecha))
+                            .addGap(62, 62, 62)
+                            .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(48, 48, 48)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(lblPrecio)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblNStands)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblTipoCocina)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(txtFTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(lblUbicacion)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(txtFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lblNombre)
-                                        .addComponent(lblFecha))
-                                    .addGap(62, 62, 62)
-                                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(109, 109, 109)
-                        .addComponent(btnAñadir)))
+                        .addGap(36, 36, 36)
+                        .addComponent(jCheckBox1)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(37, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblTitulo)
+                        .addGap(28, 28, 28))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnAñadir)
+                        .addGap(107, 107, 107))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -196,9 +235,11 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNStands)
                     .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(btnAñadir)
-                .addGap(22, 22, 22))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         pack();
@@ -240,6 +281,10 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnAñadirActionPerformed
 
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,6 +322,7 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNStands;
     private javax.swing.JLabel lblNombre;

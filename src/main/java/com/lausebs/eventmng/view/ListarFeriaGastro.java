@@ -35,9 +35,11 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 32)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Listar Feria Gastro");
+        lblTitulo.setText("Listado de Ferias Gastro");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         tblConcierto.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,6 +65,9 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblConcierto);
 
+        btnListar.setBackground(new java.awt.Color(5, 44, 77));
+        btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
+        btnListar.setForeground(new java.awt.Color(255, 255, 255));
         btnListar.setText("Listar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -75,10 +80,10 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
                         .addGap(15, 15, 15)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(176, 176, 176)
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 225, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(114, 114, 114)
+                        .addComponent(lblTitulo))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(273, 273, 273)
+                        .addGap(255, 255, 255)
                         .addComponent(btnListar)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
@@ -91,7 +96,7 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
                 .addComponent(btnListar)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();

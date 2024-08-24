@@ -28,17 +28,14 @@
               <Component id="jScrollPane1" min="-2" pref="555" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="266" max="-2" attributes="0"/>
-                      <Component id="btnListar" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="188" max="-2" attributes="0"/>
-                      <Component id="lblTitulo" min="-2" pref="200" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="lblTitulo" min="-2" pref="348" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="123" max="-2" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="256" max="-2" attributes="0"/>
+              <Component id="btnListar" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -50,9 +47,9 @@
               <Component id="lblTitulo" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="94" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
               <Component id="btnListar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace pref="35" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -61,14 +58,27 @@
     <Component class="javax.swing.JLabel" name="lblTitulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="22" style="1"/>
+          <Font name="URW Gothic" size="32" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4d" green="2c" red="5" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
-        <Property name="text" type="java.lang.String" value="Listar Concierto"/>
+        <Property name="text" type="java.lang.String" value="Listado de Conciertos"/>
+        <Property name="verticalAlignment" type="int" value="3"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="btnListar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4d" green="2c" red="5" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="14" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Listar"/>
       </Properties>
     </Component>

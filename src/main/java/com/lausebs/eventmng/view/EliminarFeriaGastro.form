@@ -42,7 +42,7 @@
                       <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="40" max="32767" attributes="0"/>
+              <EmptySpace pref="53" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -52,15 +52,15 @@
               <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
               <Component id="lblTitulo" min="-2" pref="45" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="txtFBuscarFeriaGastro" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnBuscar" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="txtFBuscarFeriaGastro" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnBuscar" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
               <Component id="pnlCenter" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="btnEliminar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="22" max="32767" attributes="0"/>
+              <EmptySpace pref="24" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -68,6 +68,15 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnBuscar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4d" green="2c" red="5" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
       <Events>
@@ -77,10 +86,14 @@
     <Component class="javax.swing.JLabel" name="lblTitulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="SansSerif" size="22" style="1"/>
+          <Font name="URW Gothic" size="22" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4d" green="2c" red="5" type="rgb"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Eliminar Feria Gastro"/>
+        <Property name="verticalAlignment" type="int" value="3"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="txtFBuscarFeriaGastro">
@@ -183,6 +196,16 @@
         <Component class="javax.swing.JTextField" name="txtFUbicacion">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFUbicacionActionPerformed"/>
@@ -191,6 +214,16 @@
         <Component class="javax.swing.JTextField" name="txtFPrecio">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFPrecioActionPerformed"/>
@@ -199,6 +232,16 @@
         <Component class="javax.swing.JTextField" name="txtFFechaDIa">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFFechaDIaActionPerformed"/>
@@ -207,6 +250,16 @@
         <Component class="javax.swing.JTextField" name="txtFFechaMes">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFFechaMesActionPerformed"/>
@@ -215,6 +268,16 @@
         <Component class="javax.swing.JTextField" name="txtFFechaA&#xf1;o">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFFechaA&#xf1;oActionPerformed"/>
@@ -222,12 +285,25 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblNombre">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4d" green="2c" red="5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Nombre"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFNombre">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFNombreActionPerformed"/>
@@ -235,27 +311,49 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblFecha">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4d" green="2c" red="5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Fecha"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblUbicacion">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4d" green="2c" red="5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Ubicacion"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblPrecio">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4d" green="2c" red="5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Precio"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblTipoCocina">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4d" green="2c" red="5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Tipo de cocina"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="txtFNStands">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFNStandsActionPerformed"/>
@@ -264,6 +362,16 @@
         <Component class="javax.swing.JTextField" name="txtFTipoCocina">
           <Properties>
             <Property name="editable" type="boolean" value="false"/>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="e2" green="d1" red="b9" type="rgb"/>
+            </Property>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
+                <LineBorder roundedCorners="true">
+                  <Color PropertyName="color" blue="4d" green="2c" red="5" type="rgb"/>
+                </LineBorder>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="txtFTipoCocinaActionPerformed"/>
@@ -271,6 +379,9 @@
         </Component>
         <Component class="javax.swing.JLabel" name="lblNStands">
           <Properties>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="4d" green="2c" red="5" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="N&#xaa; Stands"/>
           </Properties>
         </Component>
@@ -278,6 +389,15 @@
     </Container>
     <Component class="javax.swing.JButton" name="btnEliminar">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="4d" green="2c" red="5" type="rgb"/>
+        </Property>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="URW Gothic" size="12" style="1"/>
+        </Property>
+        <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="ff" red="ff" type="rgb"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
       <Events>

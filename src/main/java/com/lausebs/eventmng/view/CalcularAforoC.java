@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author estigia
  */
-public class BuscarConcierto extends javax.swing.JFrame {
+public class CalcularAforoC extends javax.swing.JFrame {
 
     /**
-     * Creates new form BuscarConcierto
+     * Creates new form CalcularAforoC
      */
-    public BuscarConcierto() {
+    public CalcularAforoC() {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
@@ -30,37 +30,30 @@ public class BuscarConcierto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
-        lblTitulo = new javax.swing.JLabel();
         txtFBuscarConcierto = new javax.swing.JTextField();
         pnlCenter = new javax.swing.JPanel();
-        lblNombre = new javax.swing.JLabel();
         lblNLocalidades = new javax.swing.JLabel();
-        lblArtista = new javax.swing.JLabel();
-        lblTipoMusica = new javax.swing.JLabel();
-        lblFecha = new javax.swing.JLabel();
-        lblUbicacion = new javax.swing.JLabel();
-        lblPrecio = new javax.swing.JLabel();
         txtFUbicacion = new javax.swing.JTextField();
         txtFNLocalidades = new javax.swing.JTextField();
         txtFPrecio = new javax.swing.JTextField();
+        lblArtista = new javax.swing.JLabel();
         txtFFechaDIa = new javax.swing.JTextField();
         txtFFechaMes = new javax.swing.JTextField();
         txtFFechaAño = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
+        lblTipoMusica = new javax.swing.JLabel();
         txtFNombre = new javax.swing.JTextField();
         txtFTipoMusica = new javax.swing.JTextField();
+        lblFecha = new javax.swing.JLabel();
+        lblUbicacion = new javax.swing.JLabel();
+        lblPrecio = new javax.swing.JLabel();
         txtFNLocalidades1 = new javax.swing.JTextField();
+        lblTitulo = new javax.swing.JLabel();
         btnBuscar = new javax.swing.JButton();
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        txtFNStands1 = new javax.swing.JTextField();
+        btnCalcularAforo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-
-        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
-        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Buscar Concierto");
-        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtFBuscarConcierto.setForeground(new java.awt.Color(153, 153, 153));
         txtFBuscarConcierto.setText("Digite el nombre");
@@ -77,26 +70,8 @@ public class BuscarConcierto extends javax.swing.JFrame {
 
         pnlCenter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
-        lblNombre.setText("Nombre");
-
         lblNLocalidades.setForeground(new java.awt.Color(5, 44, 77));
         lblNLocalidades.setText("Nª Localidades");
-
-        lblArtista.setForeground(new java.awt.Color(5, 44, 77));
-        lblArtista.setText("Artista");
-
-        lblTipoMusica.setForeground(new java.awt.Color(5, 44, 77));
-        lblTipoMusica.setText("Tipo de musica");
-
-        lblFecha.setForeground(new java.awt.Color(5, 44, 77));
-        lblFecha.setText("Fecha");
-
-        lblUbicacion.setForeground(new java.awt.Color(5, 44, 77));
-        lblUbicacion.setText("Ubicacion");
-
-        lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
-        lblPrecio.setText("Precio");
 
         txtFUbicacion.setEditable(false);
         txtFUbicacion.setBackground(new java.awt.Color(185, 209, 226));
@@ -125,6 +100,9 @@ public class BuscarConcierto extends javax.swing.JFrame {
             }
         });
 
+        lblArtista.setForeground(new java.awt.Color(5, 44, 77));
+        lblArtista.setText("Artista");
+
         txtFFechaDIa.setEditable(false);
         txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
         txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
@@ -152,6 +130,12 @@ public class BuscarConcierto extends javax.swing.JFrame {
             }
         });
 
+        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
+        lblNombre.setText("Nombre");
+
+        lblTipoMusica.setForeground(new java.awt.Color(5, 44, 77));
+        lblTipoMusica.setText("Tipo de musica");
+
         txtFNombre.setEditable(false);
         txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
         txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
@@ -169,6 +153,15 @@ public class BuscarConcierto extends javax.swing.JFrame {
                 txtFTipoMusicaActionPerformed(evt);
             }
         });
+
+        lblFecha.setForeground(new java.awt.Color(5, 44, 77));
+        lblFecha.setText("Fecha");
+
+        lblUbicacion.setForeground(new java.awt.Color(5, 44, 77));
+        lblUbicacion.setText("Ubicacion");
+
+        lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
+        lblPrecio.setText("Precio");
 
         txtFNLocalidades1.setEditable(false);
         txtFNLocalidades1.setBackground(new java.awt.Color(185, 209, 226));
@@ -260,6 +253,12 @@ public class BuscarConcierto extends javax.swing.JFrame {
                 .addGap(28, 28, 28))
         );
 
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Calcular Aforo Concierto");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
         btnBuscar.setBackground(new java.awt.Color(5, 44, 77));
         btnBuscar.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
         btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
@@ -270,23 +269,49 @@ public class BuscarConcierto extends javax.swing.JFrame {
             }
         });
 
+        txtFNStands1.setEditable(false);
+        txtFNStands1.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNStands1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
+        txtFNStands1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtFNStands1ActionPerformed(evt);
+            }
+        });
+
+        btnCalcularAforo.setBackground(new java.awt.Color(5, 44, 77));
+        btnCalcularAforo.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
+        btnCalcularAforo.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcularAforo.setText("Calcular Aforo");
+        btnCalcularAforo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularAforoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(22, 22, 22)
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(38, 38, 38)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(btnBuscar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(14, 14, 14)
-                        .addComponent(btnBuscar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                        .addGap(60, 60, 60)
+                        .addComponent(btnCalcularAforo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtFNStands1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(lblTitulo)))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -296,14 +321,23 @@ public class BuscarConcierto extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtFBuscarConcierto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscar))
                 .addGap(18, 18, 18)
                 .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(17, 17, 17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalcularAforo)
+                    .addComponent(txtFNStands1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtFBuscarConciertoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoMousePressed
+        txtFBuscarConcierto.setText("");
+        txtFBuscarConcierto.setForeground(Color.black);        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFBuscarConciertoMousePressed
 
     private void txtFBuscarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoActionPerformed
         // TODO add your handling code here:
@@ -349,10 +383,13 @@ public class BuscarConcierto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    private void txtFBuscarConciertoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoMousePressed
-     txtFBuscarConcierto.setText("");
-     txtFBuscarConcierto.setForeground(Color.black);
-    }//GEN-LAST:event_txtFBuscarConciertoMousePressed
+    private void txtFNStands1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNStands1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtFNStands1ActionPerformed
+
+    private void btnCalcularAforoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularAforoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcularAforoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -371,27 +408,27 @@ public class BuscarConcierto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuscarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuscarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuscarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuscarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoC.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarConcierto().setVisible(true);
+                new CalcularAforoC().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JButton btnCalcularAforo;
     private javax.swing.JLabel lblArtista;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNLocalidades;
@@ -407,6 +444,7 @@ public class BuscarConcierto extends javax.swing.JFrame {
     private javax.swing.JTextField txtFFechaMes;
     private javax.swing.JTextField txtFNLocalidades;
     private javax.swing.JTextField txtFNLocalidades1;
+    private javax.swing.JTextField txtFNStands1;
     private javax.swing.JTextField txtFNombre;
     private javax.swing.JTextField txtFPrecio;
     private javax.swing.JTextField txtFTipoMusica;

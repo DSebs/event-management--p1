@@ -35,10 +35,15 @@ public class ListarConcierto extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 32)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Listar Concierto");
+        lblTitulo.setText("Listado de Conciertos");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
+        btnListar.setBackground(new java.awt.Color(5, 44, 77));
+        btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
+        btnListar.setForeground(new java.awt.Color(255, 255, 255));
         btnListar.setText("Listar");
 
         tblConcierto.setModel(new javax.swing.table.DefaultTableModel(
@@ -73,14 +78,13 @@ public class ListarConcierto extends javax.swing.JFrame {
                 .addGap(0, 21, Short.MAX_VALUE)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(123, 123, 123))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(266, 266, 266)
-                        .addComponent(btnListar))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(188, 188, 188)
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(256, 256, 256)
+                .addComponent(btnListar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -90,9 +94,9 @@ public class ListarConcierto extends javax.swing.JFrame {
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
+                .addGap(30, 30, 30)
                 .addComponent(btnListar)
-                .addContainerGap(34, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();

@@ -59,11 +59,16 @@ public class ListarArtista extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblConcierto);
 
+        btnListar.setBackground(new java.awt.Color(5, 44, 77));
+        btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
+        btnListar.setForeground(new java.awt.Color(255, 255, 255));
         btnListar.setText("Listar");
 
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 32)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Listar Artistas");
+        lblTitulo.setText("Listado de Artistas");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -78,20 +83,20 @@ public class ListarArtista extends javax.swing.JFrame {
                         .addGap(173, 173, 173)
                         .addComponent(btnListar))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(63, 63, 63)
+                        .addComponent(lblTitulo)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(34, 34, 34)
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(btnListar)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
 
         pack();

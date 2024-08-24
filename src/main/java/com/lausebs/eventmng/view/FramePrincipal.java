@@ -30,6 +30,8 @@ public class FramePrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblIcon = new javax.swing.JLabel();
+        lblPNombre = new javax.swing.JLabel();
         barraMenu = new javax.swing.JMenuBar();
         mnArchivo = new javax.swing.JMenu();
         mnISalir = new javax.swing.JMenuItem();
@@ -55,8 +57,23 @@ public class FramePrincipal extends javax.swing.JFrame {
         setTitle("FramePrincipal");
         setUndecorated(true);
 
+        lblIcon.setForeground(new java.awt.Color(5, 44, 77));
+        lblIcon.setIcon(new javax.swing.ImageIcon("/home/estigia/NetBeansProjects/EventManagement/src/main/java/com/lausebs/eventmng/data/logoMainF.png")); // NOI18N
+
+        lblPNombre.setFont(new java.awt.Font("URW Gothic", 1, 24)); // NOI18N
+        lblPNombre.setForeground(new java.awt.Color(5, 44, 77));
+        lblPNombre.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblPNombre.setText("eventMANAGER");
+
+        barraMenu.setBackground(new java.awt.Color(5, 44, 77));
+        barraMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        barraMenu.setForeground(new java.awt.Color(255, 255, 255));
+
+        mnArchivo.setBorder(null);
+        mnArchivo.setForeground(new java.awt.Color(255, 255, 255));
         mnArchivo.setText("Archivo");
 
+        mnISalir.setForeground(new java.awt.Color(5, 44, 77));
         mnISalir.setText("Salir");
         mnISalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,8 +84,10 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         barraMenu.add(mnArchivo);
 
+        mnConcierto.setForeground(new java.awt.Color(255, 255, 255));
         mnConcierto.setText("Concierto");
 
+        mnIAñadirConcierto.setForeground(new java.awt.Color(5, 44, 77));
         mnIAñadirConcierto.setText("Añadir Concierto");
         mnIAñadirConcierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -77,6 +96,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnConcierto.add(mnIAñadirConcierto);
 
+        mnIBuscarConcierto.setForeground(new java.awt.Color(5, 44, 77));
         mnIBuscarConcierto.setText("Buscar Concierto");
         mnIBuscarConcierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -85,6 +105,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnConcierto.add(mnIBuscarConcierto);
 
+        mnIEliminarConcierto.setForeground(new java.awt.Color(5, 44, 77));
         mnIEliminarConcierto.setText("Eliminar Concierto");
         mnIEliminarConcierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -93,6 +114,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnConcierto.add(mnIEliminarConcierto);
 
+        mnIListarConcierto.setForeground(new java.awt.Color(5, 44, 77));
         mnIListarConcierto.setText("Listar Conciertos");
         mnIListarConcierto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,13 +123,21 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnConcierto.add(mnIListarConcierto);
 
+        mnICalcularAforoC.setForeground(new java.awt.Color(5, 44, 77));
         mnICalcularAforoC.setText("Calcular aforo");
+        mnICalcularAforoC.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnICalcularAforoCActionPerformed(evt);
+            }
+        });
         mnConcierto.add(mnICalcularAforoC);
 
         barraMenu.add(mnConcierto);
 
+        mnFeriaGastro.setForeground(new java.awt.Color(255, 255, 255));
         mnFeriaGastro.setText("Feria");
 
+        mnIAñadirFeria.setForeground(new java.awt.Color(5, 44, 77));
         mnIAñadirFeria.setText("Añadir Feria");
         mnIAñadirFeria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +146,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnFeriaGastro.add(mnIAñadirFeria);
 
+        mnIBuscarFeria.setForeground(new java.awt.Color(5, 44, 77));
         mnIBuscarFeria.setText("Buscar Feria");
         mnIBuscarFeria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,6 +155,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnFeriaGastro.add(mnIBuscarFeria);
 
+        mnIEliminarFeria.setForeground(new java.awt.Color(5, 44, 77));
         mnIEliminarFeria.setText("Eliminar Feria");
         mnIEliminarFeria.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,6 +164,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnFeriaGastro.add(mnIEliminarFeria);
 
+        mnIListarFerias.setForeground(new java.awt.Color(5, 44, 77));
         mnIListarFerias.setText("Listar Ferias");
         mnIListarFerias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -140,13 +173,21 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnFeriaGastro.add(mnIListarFerias);
 
+        mnICalcularAforoF.setForeground(new java.awt.Color(5, 44, 77));
         mnICalcularAforoF.setText("Calcular aforo");
+        mnICalcularAforoF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnICalcularAforoFActionPerformed(evt);
+            }
+        });
         mnFeriaGastro.add(mnICalcularAforoF);
 
         barraMenu.add(mnFeriaGastro);
 
+        mnArtista.setForeground(new java.awt.Color(255, 255, 255));
         mnArtista.setText("Artista");
 
+        mnIAñadirArtista.setForeground(new java.awt.Color(5, 44, 77));
         mnIAñadirArtista.setText("Adicionar Artista");
         mnIAñadirArtista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +196,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnArtista.add(mnIAñadirArtista);
 
+        mnIListarArtistas.setForeground(new java.awt.Color(5, 44, 77));
         mnIListarArtistas.setText("Listar Artistas");
         mnIListarArtistas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,8 +207,11 @@ public class FramePrincipal extends javax.swing.JFrame {
 
         barraMenu.add(mnArtista);
 
+        mnAyuda.setBackground(new java.awt.Color(5, 44, 77));
+        mnAyuda.setForeground(new java.awt.Color(255, 255, 255));
         mnAyuda.setText("Ayuda");
 
+        mnIAcercaD.setForeground(new java.awt.Color(5, 44, 77));
         mnIAcercaD.setText("Acerca de ...");
         mnIAcercaD.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -183,11 +228,23 @@ public class FramePrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 275, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(lblPNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 317, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addComponent(lblIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(lblPNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -252,6 +309,16 @@ public class FramePrincipal extends javax.swing.JFrame {
      listarArtista.setVisible(true);
     }//GEN-LAST:event_mnIListarArtistasActionPerformed
 
+    private void mnICalcularAforoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnICalcularAforoCActionPerformed
+    CalcularAforoC calcularAC = new CalcularAforoC(); 
+    calcularAC.setVisible(true);
+    }//GEN-LAST:event_mnICalcularAforoCActionPerformed
+
+    private void mnICalcularAforoFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnICalcularAforoFActionPerformed
+     CalcularAforoF calcularAF = new CalcularAforoF(); 
+    calcularAF.setVisible(true);
+    }//GEN-LAST:event_mnICalcularAforoFActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -289,6 +356,8 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuBar barraMenu;
+    private javax.swing.JLabel lblIcon;
+    private javax.swing.JLabel lblPNombre;
     private javax.swing.JMenu mnArchivo;
     private javax.swing.JMenu mnArtista;
     private javax.swing.JMenu mnAyuda;

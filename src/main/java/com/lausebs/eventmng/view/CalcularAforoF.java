@@ -10,12 +10,12 @@ import java.awt.Color;
  *
  * @author estigia
  */
-public class EliminarFeriaGastro extends javax.swing.JFrame {
+public class CalcularAforoF extends javax.swing.JFrame {
 
     /**
-     * Creates new form EliminarFeriaGastro
+     * Creates new form CalcularAforoF
      */
-    public EliminarFeriaGastro() {
+    public CalcularAforoF() {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
@@ -30,6 +30,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnCalcularAforo = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
         txtFBuscarFeriaGastro = new javax.swing.JTextField();
@@ -48,9 +49,19 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
         txtFNStands = new javax.swing.JTextField();
         txtFTipoCocina = new javax.swing.JTextField();
         lblNStands = new javax.swing.JLabel();
-        btnEliminar = new javax.swing.JButton();
+        txtFNStands1 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        btnCalcularAforo.setBackground(new java.awt.Color(5, 44, 77));
+        btnCalcularAforo.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
+        btnCalcularAforo.setForeground(new java.awt.Color(255, 255, 255));
+        btnCalcularAforo.setText("Calcular Aforo");
+        btnCalcularAforo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCalcularAforoActionPerformed(evt);
+            }
+        });
 
         btnBuscar.setBackground(new java.awt.Color(5, 44, 77));
         btnBuscar.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
@@ -65,7 +76,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
         lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitulo.setText("Eliminar Feria Gastro");
+        lblTitulo.setText("Calcular Aforo Feria");
         lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         txtFBuscarFeriaGastro.setForeground(new java.awt.Color(153, 153, 153));
@@ -235,13 +246,12 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        btnEliminar.setBackground(new java.awt.Color(5, 44, 77));
-        btnEliminar.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
-        btnEliminar.setForeground(new java.awt.Color(255, 255, 255));
-        btnEliminar.setText("Eliminar");
-        btnEliminar.addActionListener(new java.awt.event.ActionListener() {
+        txtFNStands1.setEditable(false);
+        txtFNStands1.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNStands1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
+        txtFNStands1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnEliminarActionPerformed(evt);
+                txtFNStands1ActionPerformed(evt);
             }
         });
 
@@ -261,8 +271,10 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
                                 .addComponent(txtFBuscarFeriaGastro, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(lblTitulo)))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(123, 123, 123)
-                        .addComponent(btnEliminar)))
+                        .addGap(61, 61, 61)
+                        .addComponent(btnCalcularAforo)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtFNStands1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -277,16 +289,27 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(btnEliminar)
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCalcularAforo)
+                    .addComponent(txtFNStands1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnCalcularAforoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularAforoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCalcularAforoActionPerformed
+
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnBuscarActionPerformed
+
+    private void txtFBuscarFeriaGastroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarFeriaGastroMousePressed
+        txtFBuscarFeriaGastro.setText("");
+        txtFBuscarFeriaGastro.setForeground(Color.black);         // TODO add your handling code here:
+    }//GEN-LAST:event_txtFBuscarFeriaGastroMousePressed
 
     private void txtFBuscarFeriaGastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFBuscarFeriaGastroActionPerformed
         // TODO add your handling code here:
@@ -324,14 +347,9 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFTipoCocinaActionPerformed
 
-    private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+    private void txtFNStands1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNStands1ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_btnEliminarActionPerformed
-
-    private void txtFBuscarFeriaGastroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarFeriaGastroMousePressed
-     txtFBuscarFeriaGastro.setText("");
-     txtFBuscarFeriaGastro.setForeground(Color.black);         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFBuscarFeriaGastroMousePressed
+    }//GEN-LAST:event_txtFNStands1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -350,27 +368,27 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new EliminarFeriaGastro().setVisible(true);
+                new CalcularAforoF().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
-    private javax.swing.JButton btnEliminar;
+    private javax.swing.JButton btnCalcularAforo;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNStands;
     private javax.swing.JLabel lblNombre;
@@ -384,6 +402,7 @@ public class EliminarFeriaGastro extends javax.swing.JFrame {
     private javax.swing.JTextField txtFFechaDIa;
     private javax.swing.JTextField txtFFechaMes;
     private javax.swing.JTextField txtFNStands;
+    private javax.swing.JTextField txtFNStands1;
     private javax.swing.JTextField txtFNombre;
     private javax.swing.JTextField txtFPrecio;
     private javax.swing.JTextField txtFTipoCocina;

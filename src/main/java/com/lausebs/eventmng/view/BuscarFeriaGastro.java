@@ -67,6 +67,8 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
         pnlCenter.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         txtFUbicacion.setEditable(false);
+        txtFUbicacion.setBackground(new java.awt.Color(185, 209, 226));
+        txtFUbicacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFUbicacionActionPerformed(evt);
@@ -74,6 +76,8 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
         });
 
         txtFPrecio.setEditable(false);
+        txtFPrecio.setBackground(new java.awt.Color(185, 209, 226));
+        txtFPrecio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFPrecioActionPerformed(evt);
@@ -81,6 +85,8 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
         });
 
         txtFFechaDIa.setEditable(false);
+        txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaDIaActionPerformed(evt);
@@ -88,6 +94,8 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
         });
 
         txtFFechaMes.setEditable(false);
+        txtFFechaMes.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaMesActionPerformed(evt);
@@ -95,30 +103,41 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
         });
 
         txtFFechaAño.setEditable(false);
+        txtFFechaAño.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaAño.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaAñoActionPerformed(evt);
             }
         });
 
+        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
 
         txtFNombre.setEditable(false);
+        txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNombreActionPerformed(evt);
             }
         });
 
+        lblFecha.setForeground(new java.awt.Color(5, 44, 77));
         lblFecha.setText("Fecha");
 
+        lblUbicacion.setForeground(new java.awt.Color(5, 44, 77));
         lblUbicacion.setText("Ubicacion");
 
+        lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
         lblPrecio.setText("Precio");
 
+        lblTipoCocina.setForeground(new java.awt.Color(5, 44, 77));
         lblTipoCocina.setText("Tipo de cocina");
 
         txtFNStands.setEditable(false);
+        txtFNStands.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNStands.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNStands.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNStandsActionPerformed(evt);
@@ -126,12 +145,15 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
         });
 
         txtFTipoCocina.setEditable(false);
+        txtFTipoCocina.setBackground(new java.awt.Color(185, 209, 226));
+        txtFTipoCocina.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFTipoCocina.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFTipoCocinaActionPerformed(evt);
             }
         });
 
+        lblNStands.setForeground(new java.awt.Color(5, 44, 77));
         lblNStands.setText("Nª Stands");
 
         javax.swing.GroupLayout pnlCenterLayout = new javax.swing.GroupLayout(pnlCenter);
@@ -174,7 +196,7 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
-                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE)
+                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
                     .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
@@ -196,6 +218,9 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
+        btnBuscar.setBackground(new java.awt.Color(5, 44, 77));
+        btnBuscar.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
+        btnBuscar.setForeground(new java.awt.Color(255, 255, 255));
         btnBuscar.setText("Buscar");
         btnBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -203,9 +228,11 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
             }
         });
 
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Buscar Feria Gastro");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -228,7 +255,7 @@ public class BuscarFeriaGastro extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(txtFBuscarFeriaGastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar))
                 .addGap(18, 18, 18)

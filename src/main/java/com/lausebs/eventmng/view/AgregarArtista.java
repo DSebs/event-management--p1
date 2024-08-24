@@ -38,25 +38,35 @@ public class AgregarArtista extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Agregar Artista");
 
+        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
 
+        txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNombreActionPerformed(evt);
             }
         });
 
+        lblDisquera.setForeground(new java.awt.Color(5, 44, 77));
         lblDisquera.setText("Disquera");
 
+        txtFDisquera.setBackground(new java.awt.Color(185, 209, 226));
+        txtFDisquera.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFDisquera.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFDisqueraActionPerformed(evt);
             }
         });
 
+        btnAñadir.setBackground(new java.awt.Color(5, 44, 77));
+        btnAñadir.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
+        btnAñadir.setForeground(new java.awt.Color(255, 255, 255));
         btnAñadir.setText("Añadir");
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,7 +113,7 @@ public class AgregarArtista extends javax.swing.JFrame {
                     .addComponent(lblDisquera))
                 .addGap(18, 18, 18)
                 .addComponent(btnAñadir)
-                .addContainerGap(30, Short.MAX_VALUE))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();

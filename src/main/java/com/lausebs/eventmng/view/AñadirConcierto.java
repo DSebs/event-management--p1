@@ -48,26 +48,37 @@ public class AñadirConcierto extends javax.swing.JFrame {
         cmbArtista = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(275, 395));
+        setPreferredSize(new java.awt.Dimension(275, 405));
 
-        lblTitulo.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Añadir Concierto");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
+        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
 
+        txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNombreActionPerformed(evt);
             }
         });
 
+        lblFecha.setForeground(new java.awt.Color(5, 44, 77));
         lblFecha.setText("Fecha");
 
+        lblUbicacion.setForeground(new java.awt.Color(5, 44, 77));
         lblUbicacion.setText("Ubicacion");
 
+        lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
         lblPrecio.setText("Precio");
 
+        btnAñadir.setBackground(new java.awt.Color(5, 44, 77));
+        btnAñadir.setFont(new java.awt.Font("URW Gothic", 1, 12)); // NOI18N
+        btnAñadir.setForeground(new java.awt.Color(255, 255, 255));
         btnAñadir.setText("Añadir");
         btnAñadir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,66 +86,88 @@ public class AñadirConcierto extends javax.swing.JFrame {
             }
         });
 
+        txtFUbicacion.setBackground(new java.awt.Color(185, 209, 226));
+        txtFUbicacion.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFUbicacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFUbicacionActionPerformed(evt);
             }
         });
 
+        txtFPrecio.setBackground(new java.awt.Color(185, 209, 226));
+        txtFPrecio.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFPrecio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFPrecioActionPerformed(evt);
             }
         });
 
+        txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaDIaActionPerformed(evt);
             }
         });
 
+        txtFFechaMes.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaMes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaMesActionPerformed(evt);
             }
         });
 
+        txtFFechaAño.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFechaAño.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFFechaAño.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFFechaAñoActionPerformed(evt);
             }
         });
 
+        lblTipoMusica.setForeground(new java.awt.Color(5, 44, 77));
         lblTipoMusica.setText("Tipo de musica");
 
+        txtFTipoMusica.setBackground(new java.awt.Color(185, 209, 226));
+        txtFTipoMusica.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFTipoMusica.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFTipoMusicaActionPerformed(evt);
             }
         });
 
+        lblNLocalidades.setForeground(new java.awt.Color(5, 44, 77));
         lblNLocalidades.setText("Nª Localidades");
 
+        txtFNLocalidades.setBackground(new java.awt.Color(185, 209, 226));
+        txtFNLocalidades.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNLocalidades.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtFNLocalidadesActionPerformed(evt);
             }
         });
 
+        lblArtista.setForeground(new java.awt.Color(5, 44, 77));
         lblArtista.setText("Artista");
 
+        cmbArtista.setBackground(new java.awt.Color(5, 44, 77));
+        cmbArtista.setFont(new java.awt.Font("URW Gothic", 0, 12)); // NOI18N
+        cmbArtista.setForeground(new java.awt.Color(185, 209, 226));
         cmbArtista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cmbArtistaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(46, Short.MAX_VALUE)
+                .addContainerGap(50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(64, 64, 64)
-                        .addComponent(btnAñadir))
                     .addComponent(lblTitulo)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(lblUbicacion)
@@ -165,32 +198,36 @@ public class AñadirConcierto extends javax.swing.JFrame {
                                     .addComponent(lblNLocalidades)
                                     .addComponent(lblArtista))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtFNLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(6, 6, 6)
-                                        .addComponent(cmbArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(cmbArtista, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addComponent(txtFNLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addComponent(lblTipoMusica)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtFTipoMusica, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(43, 43, 43))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(97, 97, 97)
+                .addComponent(btnAñadir)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblNombre))
-                .addGap(18, 18, 18)
+                    .addComponent(lblNombre)
+                    .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
                     .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 23, Short.MAX_VALUE))
+                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
+                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUbicacion)
@@ -207,13 +244,13 @@ public class AñadirConcierto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNLocalidades)
                     .addComponent(txtFNLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblArtista)
-                    .addComponent(cmbArtista, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(cmbArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblArtista))
+                .addGap(18, 18, 18)
                 .addComponent(btnAñadir)
-                .addGap(42, 42, 42))
+                .addGap(36, 36, 36))
         );
 
         pack();
@@ -254,6 +291,10 @@ public class AñadirConcierto extends javax.swing.JFrame {
     private void txtFNLocalidadesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNLocalidadesActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFNLocalidadesActionPerformed
+
+    private void cmbArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbArtistaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cmbArtistaActionPerformed
 
     /**
      * @param args the command line arguments
