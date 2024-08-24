@@ -34,7 +34,10 @@ public class Artista  {
         this.disquera = disquera;
     }
     
-    
+      private void verificarInvariantes() {
+        assert nombre != null && !nombre.isEmpty() : "El nombre del artista no puede ser null ni estar vacío";
+        assert disquera != null && !disquera.isEmpty() : "La disquera no puede ser null ni estar vacía";
+    }
     
     
 }

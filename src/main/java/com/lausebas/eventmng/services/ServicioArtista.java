@@ -5,26 +5,31 @@
 package com.lausebas.eventmng.services;
 
 import com.lausebas.eventmng.model.Artista;
-import com.lausebas.eventmng.model.Evento;
 import java.util.ArrayList;
 
-/**
- *
- * @author Laura
- */
 public class ServicioArtista {
     
-    private ArrayList <Artista> artistas;   
+    private ArrayList<Artista> artistas;   
 
     public ServicioArtista(ArrayList<Artista> artistas) {
         this.artistas = artistas;
     }
     
-        public void añadirArtista(Artista artista) {
+    public void añadirArtista(Artista artista) {
+        if (artista == null) {
+            throw new IllegalArgumentException("El artista no puede ser null.");
+        }
+
+        for (Artista a : artistas) {
+            if (a.getNombre().equalsIgnoreCase(artista.getNombre())) {
+                throw new IllegalArgumentException("Ya existe un artista con el mismo nombre.");
+            }
+        }
+
         artistas.add(artista);
     }
         
-        public ArrayList listarArtistas(){
-            return artistas;
-        }
+    public ArrayList<Artista> listarArtistas() {
+        return artistas;
+    }
 }

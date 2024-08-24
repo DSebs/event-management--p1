@@ -1,35 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.lausebas.eventmng.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
-
-/**
- *
- * @author Laura
- */
 public class Concierto extends Evento {
 
-    @Override
-    public int calcularAforo() {
-        return localidades * PERSONAS_POR_LOCALIDAD;
-    }
-    
-    private String tipoMusica;
-    private int localidades;
     private Artista artista;
-    
-    public final static int PERSONAS_POR_LOCALIDAD = 135;
+    private int localidades;
 
-    public Concierto(String tipoMusica, int localidades, String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
+    public Concierto(String nombre, LocalDate fecha, String ubicacion, double precioEntrada, Artista artista, int localidades) {
         super(nombre, fecha, ubicacion, precioEntrada);
-        this.tipoMusica = tipoMusica;
+        this.artista = artista;
         this.localidades = localidades;
-        
-        
+        verificarInvariantes();
     }
 
     public Artista getArtista() {
@@ -38,14 +21,7 @@ public class Concierto extends Evento {
 
     public void setArtista(Artista artista) {
         this.artista = artista;
-    }
-
-    public String getTipoMusica() {
-        return tipoMusica;
-    }
-
-    public void setTipoMusica(String tipoMusica) {
-        this.tipoMusica = tipoMusica;
+        verificarInvariantes();
     }
 
     public int getLocalidades() {
@@ -54,13 +30,18 @@ public class Concierto extends Evento {
 
     public void setLocalidades(int localidades) {
         this.localidades = localidades;
+        verificarInvariantes();
     }
 
+    @Override
+    public int calcularAforo() {
+        // Implementación específica del cálculo de aforo
+        return 0;
+    }
 
-    
-    
-    
-    
-    
-    
+    protected void verificarInvariantes() {
+        super.verificarInvariantes();
+        assert artista != null : "El artista no puede ser nulo";
+        assert localidades > 0 : "El número de localidades debe ser mayor a 0";
+    }
 }

@@ -10,7 +10,10 @@ package com.lausebas.eventmng.model;
  */
 public interface Expandible {
     
-    int EXTRA_DE_STANDS = 5;
-    public void aumentarNumStands();
+    int EXTRA_DE_PERSONAS = 5;
+    public int aumentarCapStands();
+        
+    
     
 }
+

@@ -1,35 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.lausebas.eventmng.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
+public class FeriaGastronomica extends Evento {
 
-/**
- *
- * @author Laura
- */
-public class FeriaGastronomica extends  Evento implements Expandible{
-
-    private String tipoCocina;
     private int numStands;
-    
-    public final static int PERSONAS_POR_STANDS = 10;
+    private String tipoCocina;
 
-    public FeriaGastronomica(String tipoCocina, int numStands, String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
+    public FeriaGastronomica(String nombre, LocalDate fecha, String ubicacion, double precioEntrada, int numStands, String tipoCocina) {
         super(nombre, fecha, ubicacion, precioEntrada);
-        this.tipoCocina = tipoCocina;
         this.numStands = numStands;
-    }
-
-    public String getTipoCocina() {
-        return tipoCocina;
-    }
-
-    public void setTipoCocina(String tipoCocina) {
         this.tipoCocina = tipoCocina;
+        verificarInvariantes();
     }
 
     public int getNumStands() {
@@ -38,20 +21,27 @@ public class FeriaGastronomica extends  Evento implements Expandible{
 
     public void setNumStands(int numStands) {
         this.numStands = numStands;
+        verificarInvariantes();
     }
-    
-    
-  
-    
-    @Override
-    public int calcularAforo() {
-        return numStands * PERSONAS_POR_STANDS;
+
+    public String getTipoCocina() {
+        return tipoCocina;
+    }
+
+    public void setTipoCocina(String tipoCocina) {
+        this.tipoCocina = tipoCocina;
+        verificarInvariantes();
     }
 
     @Override
-    public void aumentarNumStands() {
-        numStands += EXTRA_DE_STANDS;
+    public int calcularAforo() {
+        // Implementación específica del cálculo de aforo
+        return 0;
     }
-    
-    
+
+    protected void verificarInvariantes() {
+        super.verificarInvariantes();
+        assert numStands > 0 : "El número de stands debe ser mayor a 0";
+        assert tipoCocina != null && !tipoCocina.isEmpty() : "El tipo de cocina no puede ser nulo ni estar vacío";
+    }
 }
