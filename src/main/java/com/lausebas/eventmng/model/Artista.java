@@ -16,6 +16,7 @@ public class Artista  {
     public Artista(String nombre, String disquera) {
         this.nombre = nombre;
         this.disquera = disquera;
+        verificarInvariantes();
     }
 
     public String getNombre() {

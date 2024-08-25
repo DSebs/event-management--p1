@@ -1,3 +1,5 @@
+package com.lausebas.eventmng.services;
+
 import com.lausebas.eventmng.model.Evento;
 import java.util.ArrayList;
 import java.util.List;

@@ -4,21 +4,21 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioEvento;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
-
 /**
  *
  * @author estigia
  */
 public class FramePrincipal extends javax.swing.JFrame {
 
-    /**
-     * Creates new form FramePrincipal
-     */
     public FramePrincipal() {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        ArrayList eventos = new ArrayList();
+        ServicioEvento servicioEvt = new ServicioEvento(eventos);
     }
 
     /**

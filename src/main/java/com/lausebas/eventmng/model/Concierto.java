@@ -7,6 +7,7 @@ public class Concierto extends Evento {
 
     private Artista artista;
     private int localidades;
+     public final static int PERSONAS_POR_LOCALIDAD = 235;
 
     public Concierto(String nombre, LocalDate fecha, String ubicacion, double precioEntrada, Artista artista, int localidades) {
         super(nombre, fecha, ubicacion, precioEntrada);
@@ -36,7 +37,7 @@ public class Concierto extends Evento {
     @Override
     public int calcularAforo() {
         // Implementación específica del cálculo de aforo
-        return 0;
+        return localidades * PERSONAS_POR_LOCALIDAD;
     }
 
     protected void verificarInvariantes() {
