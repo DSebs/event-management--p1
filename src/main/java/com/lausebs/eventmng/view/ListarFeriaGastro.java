@@ -119,7 +119,8 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
     }
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-          Object [] datos = new Object[model.getColumnCount()];
+        model.setRowCount(0); 
+        Object [] datos = new Object[model.getColumnCount()];
         for (FeriaGastronomica feriaGastro : servicioEvento.listarFeriasGastronomicas()) {
            datos[0] = feriaGastro.getNombre();
            datos[1] =feriaGastro.getFecha().toString();

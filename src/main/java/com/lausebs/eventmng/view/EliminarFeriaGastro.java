@@ -188,7 +188,7 @@ private ServicioEvento servicioEvento;
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
-                    .addComponent(txtFFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+                    .addComponent(txtFFecha))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUbicacion)
@@ -314,6 +314,13 @@ private ServicioEvento servicioEvento;
                 JOptionPane.showMessageDialog(this, "Feria eliminada exitosamente.", 
                                               "Eliminación exitosa", 
                                               JOptionPane.INFORMATION_MESSAGE);
+             txtFNombre.setText("");
+             txtFFecha.setText("");
+             txtFUbicacion.setText("");
+             txtFPrecio.setText("");
+             txtFTipoCocina.setText("");
+             txtFNStands.setText("");
+             txtFBuscarFeriaGastro.setText("");
             }
         else {
             JOptionPane.showMessageDialog(this, "No se elimino la feria.", 

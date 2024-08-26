@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-package com.lausebs.eventmng.view;
+    package com.lausebs.eventmng.view;
 
 import com.lausebas.eventmng.services.ServicioArtista;
 import com.lausebas.eventmng.services.ServicioEvento;
@@ -16,6 +16,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private ServicioEvento servicioEvento;
     private ServicioArtista servicioArtista;
+   
     
     public FramePrincipal() {
         initComponents();

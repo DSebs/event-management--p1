@@ -41,12 +41,13 @@ public class ServicioArtista {
     
     public Artista buscarArtista(String nombre){
         for (Artista artista : artistas) {
-            if(artista.getNombre().equalsIgnoreCase(nombre));
+            if(artista.getNombre().equalsIgnoreCase(nombre)){
             return artista;
         }
-        return null;
     }
-        
+         return null;
+    }
+    
     public ArrayList<Artista> listarArtistas() {
         return artistas;
     }

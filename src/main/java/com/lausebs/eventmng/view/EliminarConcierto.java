@@ -202,7 +202,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
-                    .addComponent(txtFFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+                    .addComponent(txtFFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUbicacion)
@@ -340,6 +340,14 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Concierto eliminado exitosamente.", 
                                               "Eliminación exitosa", 
                                               JOptionPane.INFORMATION_MESSAGE);
+             txtFNombre.setText("");
+             txtFFecha.setText("");
+             txtFUbicacion.setText("");
+             txtFPrecio.setText("");
+             txtFTipoMusica.setText("");
+             txtFNLocalidades.setText("");
+             txtFArtista.setText("");
+             txtFBuscarConcierto.setText("");
             }
         else {
             JOptionPane.showMessageDialog(this, "No se elimino el concierto", 

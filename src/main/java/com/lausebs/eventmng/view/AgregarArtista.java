@@ -137,6 +137,8 @@ public class AgregarArtista extends javax.swing.JFrame {
        try{
        servicioArtista.añadirArtista(servicioArtista.crearArtista(nm, dq));
        JOptionPane.showMessageDialog(this, "El artista se añadió con éxito.");
+       txtFNombre.setText("");
+       txtFDisquera.setText("");
        }
       catch (IllegalArgumentException e) {
         JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);

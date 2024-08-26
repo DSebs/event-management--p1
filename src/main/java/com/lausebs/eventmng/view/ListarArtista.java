@@ -118,6 +118,7 @@ public class ListarArtista extends javax.swing.JFrame {
         tblArtistas.setModel(model);
     }
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        model.setRowCount(0);
         Object [] datos = new Object[model.getColumnCount()];
         for (Artista artist : servicioArtista.listarArtistas()) {
            datos[0] = artist.getNombre();

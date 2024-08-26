@@ -120,7 +120,7 @@ public class ListarConcierto extends javax.swing.JFrame {
     }
 
     private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        
+        model.setRowCount(0);
         Object [] datos = new Object[model.getColumnCount()];
         for (Concierto concierto : servicioEvento.listarConciertos()) {
            datos[0] = concierto.getNombre();

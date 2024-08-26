@@ -57,4 +57,6 @@ public class Concierto extends Evento {
         assert localidades > 0 : "El número de localidades debe ser mayor a 0";
         assert tipoMusica != null: "El tipo de musica no puede estar vacio";
     }
+
+    
 }
