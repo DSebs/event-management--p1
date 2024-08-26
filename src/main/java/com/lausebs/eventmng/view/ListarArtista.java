@@ -4,19 +4,25 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.model.Artista;
+import com.lausebas.eventmng.services.ServicioArtista;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author estigia
  */
 public class ListarArtista extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ListarArtista
-     */
-    public ListarArtista() {
+   private ServicioArtista servicioArtista;
+   DefaultTableModel model = new DefaultTableModel();
+   
+    public ListarArtista(ServicioArtista servicioArtista) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        setModelo();
+        this.servicioArtista = servicioArtista;
     }
 
     /**
@@ -29,13 +35,13 @@ public class ListarArtista extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblConcierto = new javax.swing.JTable();
+        tblArtistas = new javax.swing.JTable();
         btnListar = new javax.swing.JButton();
         lblTitulo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        tblConcierto.setModel(new javax.swing.table.DefaultTableModel(
+        tblArtistas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
                 {null, null},
@@ -57,12 +63,17 @@ public class ListarArtista extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblConcierto);
+        jScrollPane1.setViewportView(tblArtistas);
 
         btnListar.setBackground(new java.awt.Color(5, 44, 77));
         btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
         btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
 
         lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 32)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
@@ -101,46 +112,26 @@ public class ListarArtista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ListarArtista().setVisible(true);
-            }
-        });
+   private void setModelo(){
+        String[] cabecera = {"Nombre","Disquera"};
+        model.setColumnIdentifiers(cabecera);
+        tblArtistas.setModel(model);
     }
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        Object [] datos = new Object[model.getColumnCount()];
+        for (Artista artist : servicioArtista.listarArtistas()) {
+           datos[0] = artist.getNombre();
+           datos[1] =artist.getDisquera();
+           model.addRow(datos);
+        }
+        tblArtistas.setModel(model);
+    }//GEN-LAST:event_btnListarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnListar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblConcierto;
+    private javax.swing.JTable tblArtistas;
     // End of variables declaration//GEN-END:variables
 }

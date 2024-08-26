@@ -4,19 +4,24 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioEvento;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estigia
  */
 public class AñadirFeriaGastro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AñadirFeriaGastro
-     */
-    public AñadirFeriaGastro() {
+  
+       private ServicioEvento servicioEvento;
+       
+    public AñadirFeriaGastro(ServicioEvento servicioEvento) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioEvento = servicioEvento;
     }
 
     /**
@@ -44,7 +49,7 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         lblNStands = new javax.swing.JLabel();
         lblUbicacion = new javax.swing.JLabel();
         btnAñadir = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        chExpandible = new javax.swing.JCheckBox();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -146,11 +151,11 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
             }
         });
 
-        jCheckBox1.setForeground(new java.awt.Color(5, 44, 77));
-        jCheckBox1.setText("Expandible");
-        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+        chExpandible.setForeground(new java.awt.Color(5, 44, 77));
+        chExpandible.setText("Expandible");
+        chExpandible.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox1ActionPerformed(evt);
+                chExpandibleActionPerformed(evt);
             }
         });
 
@@ -192,7 +197,7 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                             .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
-                        .addComponent(jCheckBox1)))
+                        .addComponent(chExpandible)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(37, Short.MAX_VALUE)
@@ -236,7 +241,7 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                     .addComponent(lblNStands)
                     .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(chExpandible, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnAñadir)
                 .addContainerGap(31, Short.MAX_VALUE))
@@ -278,51 +283,31 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFTipoCocinaActionPerformed
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnAñadirActionPerformed
-
-    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox1ActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AñadirFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AñadirFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AñadirFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AñadirFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        try{
+        servicioEvento.añadirFeriaGastro(servicioEvento.crearFeriaGastro(Integer.parseInt(txtFNStands.getText()),
+                                                                                                                                          txtFTipoCocina.getText(),
+                                                                                                                                          chExpandible.isSelected(),
+                                                                                                                                          txtFNombre.getText(),
+                                                                                                                                           LocalDate.of(Integer.parseInt(txtFFechaAño.getText()),
+                                                                                                                                                                    Integer.parseInt(txtFFechaMes.getText()), 
+                                                                                                                                                                    Integer.parseInt(txtFFechaDIa.getText())),
+                                                                                                                                           txtFUbicacion.getText(),
+                                                                                                                                           Double.parseDouble(txtFPrecio.getText())));
+                     JOptionPane.showMessageDialog(this, "El evento se añadió con éxito.");
+        }    
+        catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
-        //</editor-fold>
+    }//GEN-LAST:event_btnAñadirActionPerformed
+    
+    private void chExpandibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chExpandibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chExpandibleActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AñadirFeriaGastro().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox chExpandible;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNStands;
     private javax.swing.JLabel lblNombre;

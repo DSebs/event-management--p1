@@ -4,7 +4,9 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioEvento;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +14,13 @@ import java.awt.Color;
  */
 public class CalcularAforoF extends javax.swing.JFrame {
 
-    /**
-     * Creates new form CalcularAforoF
-     */
-    public CalcularAforoF() {
+   private ServicioEvento servicioEvento;
+   
+    public CalcularAforoF(ServicioEvento servicioEvento) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioEvento = servicioEvento;
     }
 
     /**
@@ -37,9 +39,7 @@ public class CalcularAforoF extends javax.swing.JFrame {
         pnlCenter = new javax.swing.JPanel();
         txtFUbicacion = new javax.swing.JTextField();
         txtFPrecio = new javax.swing.JTextField();
-        txtFFechaDIa = new javax.swing.JTextField();
-        txtFFechaMes = new javax.swing.JTextField();
-        txtFFechaAño = new javax.swing.JTextField();
+        txtFFecha = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
         txtFNombre = new javax.swing.JTextField();
         lblFecha = new javax.swing.JLabel();
@@ -49,7 +49,7 @@ public class CalcularAforoF extends javax.swing.JFrame {
         txtFNStands = new javax.swing.JTextField();
         txtFTipoCocina = new javax.swing.JTextField();
         lblNStands = new javax.swing.JLabel();
-        txtFNStands1 = new javax.swing.JTextField();
+        txtFCalcularAforo = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -112,30 +112,12 @@ public class CalcularAforoF extends javax.swing.JFrame {
             }
         });
 
-        txtFFechaDIa.setEditable(false);
-        txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
+        txtFFecha.setEditable(false);
+        txtFFecha.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFecha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
+        txtFFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaDIaActionPerformed(evt);
-            }
-        });
-
-        txtFFechaMes.setEditable(false);
-        txtFFechaMes.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaMesActionPerformed(evt);
-            }
-        });
-
-        txtFFechaAño.setEditable(false);
-        txtFFechaAño.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaAño.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaAño.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaAñoActionPerformed(evt);
+                txtFFechaActionPerformed(evt);
             }
         });
 
@@ -199,19 +181,12 @@ public class CalcularAforoF extends javax.swing.JFrame {
                     .addComponent(lblNStands))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtFTipoCocina, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(txtFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(pnlCenterLayout.createSequentialGroup()
-                            .addGap(6, 6, 6)
-                            .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(txtFNStands, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtFTipoCocina, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtFUbicacion, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtFNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtFPrecio, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(txtFFecha))
                 .addContainerGap(20, Short.MAX_VALUE))
         );
         pnlCenterLayout.setVerticalGroup(
@@ -224,9 +199,7 @@ public class CalcularAforoF extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
-                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(txtFFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUbicacion)
@@ -246,12 +219,12 @@ public class CalcularAforoF extends javax.swing.JFrame {
                 .addGap(32, 32, 32))
         );
 
-        txtFNStands1.setEditable(false);
-        txtFNStands1.setBackground(new java.awt.Color(185, 209, 226));
-        txtFNStands1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFNStands1.addActionListener(new java.awt.event.ActionListener() {
+        txtFCalcularAforo.setEditable(false);
+        txtFCalcularAforo.setBackground(new java.awt.Color(185, 209, 226));
+        txtFCalcularAforo.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
+        txtFCalcularAforo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFNStands1ActionPerformed(evt);
+                txtFCalcularAforoActionPerformed(evt);
             }
         });
 
@@ -274,7 +247,7 @@ public class CalcularAforoF extends javax.swing.JFrame {
                         .addGap(61, 61, 61)
                         .addComponent(btnCalcularAforo)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(txtFNStands1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(txtFCalcularAforo, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -291,7 +264,7 @@ public class CalcularAforoF extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCalcularAforo)
-                    .addComponent(txtFNStands1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFCalcularAforo, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -299,11 +272,27 @@ public class CalcularAforoF extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCalcularAforoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularAforoActionPerformed
-        // TODO add your handling code here:
+       String nombre = txtFBuscarFeriaGastro.getText();
+       try{
+           txtFCalcularAforo.setText(String.valueOf(servicioEvento.buscarFeriaGastro(nombre).calcularAforo()));
+       }catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnCalcularAforoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+      String nombre = txtFBuscarFeriaGastro.getText();
+           try{
+       txtFNombre.setText(servicioEvento.buscarFeriaGastro(nombre).getNombre());
+       txtFFecha.setText(String.valueOf(servicioEvento.buscarFeriaGastro(nombre).getFecha()));
+       txtFUbicacion.setText(servicioEvento.buscarFeriaGastro(nombre).getUbicacion());
+       txtFPrecio.setText(String.valueOf(servicioEvento.buscarFeriaGastro(nombre).getPrecioEntrada()));
+       txtFTipoCocina.setText(servicioEvento.buscarFeriaGastro(nombre).getTipoCocina());
+       txtFNStands.setText(String.valueOf(servicioEvento.buscarFeriaGastro(nombre).getNumStands()));
+           }
+            catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtFBuscarFeriaGastroMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarFeriaGastroMousePressed
@@ -323,17 +312,9 @@ public class CalcularAforoF extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFPrecioActionPerformed
 
-    private void txtFFechaDIaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaDIaActionPerformed
+    private void txtFFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaDIaActionPerformed
-
-    private void txtFFechaMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaMesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaMesActionPerformed
-
-    private void txtFFechaAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaAñoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaAñoActionPerformed
+    }//GEN-LAST:event_txtFFechaActionPerformed
 
     private void txtFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNombreActionPerformed
         // TODO add your handling code here:
@@ -347,45 +328,11 @@ public class CalcularAforoF extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFTipoCocinaActionPerformed
 
-    private void txtFNStands1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNStands1ActionPerformed
+    private void txtFCalcularAforoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFCalcularAforoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFNStands1ActionPerformed
+    }//GEN-LAST:event_txtFCalcularAforoActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CalcularAforoF.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new CalcularAforoF().setVisible(true);
-            }
-        });
-    }
-
+  
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnCalcularAforo;
@@ -398,11 +345,9 @@ public class CalcularAforoF extends javax.swing.JFrame {
     private javax.swing.JLabel lblUbicacion;
     private javax.swing.JPanel pnlCenter;
     private javax.swing.JTextField txtFBuscarFeriaGastro;
-    private javax.swing.JTextField txtFFechaAño;
-    private javax.swing.JTextField txtFFechaDIa;
-    private javax.swing.JTextField txtFFechaMes;
+    private javax.swing.JTextField txtFCalcularAforo;
+    private javax.swing.JTextField txtFFecha;
     private javax.swing.JTextField txtFNStands;
-    private javax.swing.JTextField txtFNStands1;
     private javax.swing.JTextField txtFNombre;
     private javax.swing.JTextField txtFPrecio;
     private javax.swing.JTextField txtFTipoCocina;

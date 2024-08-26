@@ -4,7 +4,9 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioEvento;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +14,13 @@ import java.awt.Color;
  */
 public class EliminarConcierto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EliminarConcierto
-     */
-    public EliminarConcierto() {
+     private ServicioEvento servicioEvento;
+     
+    public EliminarConcierto(ServicioEvento servicioEvento) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioEvento = servicioEvento;
     }
 
     /**
@@ -37,9 +39,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
         txtFNLocalidades = new javax.swing.JTextField();
         txtFPrecio = new javax.swing.JTextField();
         lblArtista = new javax.swing.JLabel();
-        txtFFechaDIa = new javax.swing.JTextField();
-        txtFFechaMes = new javax.swing.JTextField();
-        txtFFechaAño = new javax.swing.JTextField();
+        txtFFecha = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
         lblTipoMusica = new javax.swing.JLabel();
         txtFNombre = new javax.swing.JTextField();
@@ -47,7 +47,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
         lblFecha = new javax.swing.JLabel();
         lblUbicacion = new javax.swing.JLabel();
         lblPrecio = new javax.swing.JLabel();
-        txtFNLocalidades1 = new javax.swing.JTextField();
+        txtFArtista = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
         btnEliminar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
@@ -102,30 +102,12 @@ public class EliminarConcierto extends javax.swing.JFrame {
         lblArtista.setForeground(new java.awt.Color(5, 44, 77));
         lblArtista.setText("Artista");
 
-        txtFFechaDIa.setEditable(false);
-        txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
+        txtFFecha.setEditable(false);
+        txtFFecha.setBackground(new java.awt.Color(185, 209, 226));
+        txtFFecha.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
+        txtFFecha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaDIaActionPerformed(evt);
-            }
-        });
-
-        txtFFechaMes.setEditable(false);
-        txtFFechaMes.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaMesActionPerformed(evt);
-            }
-        });
-
-        txtFFechaAño.setEditable(false);
-        txtFFechaAño.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaAño.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaAño.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaAñoActionPerformed(evt);
+                txtFFechaActionPerformed(evt);
             }
         });
 
@@ -162,12 +144,12 @@ public class EliminarConcierto extends javax.swing.JFrame {
         lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
         lblPrecio.setText("Precio");
 
-        txtFNLocalidades1.setEditable(false);
-        txtFNLocalidades1.setBackground(new java.awt.Color(185, 209, 226));
-        txtFNLocalidades1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFNLocalidades1.addActionListener(new java.awt.event.ActionListener() {
+        txtFArtista.setEditable(false);
+        txtFArtista.setBackground(new java.awt.Color(185, 209, 226));
+        txtFArtista.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
+        txtFArtista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFNLocalidades1ActionPerformed(evt);
+                txtFArtistaActionPerformed(evt);
             }
         });
 
@@ -187,15 +169,9 @@ public class EliminarConcierto extends javax.swing.JFrame {
                             .addComponent(lblNombre)
                             .addComponent(lblFecha))
                         .addGap(56, 56, 56)
-                        .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlCenterLayout.createSequentialGroup()
-                                .addGap(6, 6, 6)
-                                .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtFNombre, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                            .addComponent(txtFFecha)))
                     .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addGroup(pnlCenterLayout.createSequentialGroup()
                             .addComponent(lblPrecio)
@@ -209,7 +185,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(txtFNLocalidades, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtFNLocalidades1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtFArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCenterLayout.createSequentialGroup()
                                 .addComponent(lblTipoMusica)
                                 .addGap(18, 18, 18)
@@ -226,9 +202,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblFecha)
-                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE)
-                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
+                    .addComponent(txtFFecha, javax.swing.GroupLayout.DEFAULT_SIZE, 23, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblUbicacion)
@@ -248,7 +222,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblArtista)
-                    .addComponent(txtFNLocalidades1, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtFArtista, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(28, 28, 28))
         );
 
@@ -336,17 +310,9 @@ public class EliminarConcierto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFPrecioActionPerformed
 
-    private void txtFFechaDIaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaDIaActionPerformed
+    private void txtFFechaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaDIaActionPerformed
-
-    private void txtFFechaMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaMesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaMesActionPerformed
-
-    private void txtFFechaAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaAñoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaAñoActionPerformed
+    }//GEN-LAST:event_txtFFechaActionPerformed
 
     private void txtFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNombreActionPerformed
         // TODO add your handling code here:
@@ -356,16 +322,50 @@ public class EliminarConcierto extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFTipoMusicaActionPerformed
 
-    private void txtFNLocalidades1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNLocalidades1ActionPerformed
+    private void txtFArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFArtistaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtFNLocalidades1ActionPerformed
+    }//GEN-LAST:event_txtFArtistaActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        // TODO add your handling code here:
+       String nombre = txtFBuscarConcierto.getText();
+       try{
+           int confirmacion = JOptionPane.showConfirmDialog(this, 
+                "¿Está seguro que desea eliminar el concierto " + nombre + "?",
+                "Confirmar eliminación",
+                JOptionPane.YES_NO_OPTION);
+
+            // Si el usuario confirma, eliminar el concierto
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                servicioEvento.eliminarConcierto(servicioEvento.buscarConcierto(nombre));
+                JOptionPane.showMessageDialog(this, "Concierto eliminado exitosamente.", 
+                                              "Eliminación exitosa", 
+                                              JOptionPane.INFORMATION_MESSAGE);
+            }
+        else {
+            JOptionPane.showMessageDialog(this, "No se elimino el concierto", 
+                                          "Error", 
+                                          JOptionPane.ERROR_MESSAGE);
+}
+       }
+       catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-        // TODO add your handling code here:
+       String nombre = txtFBuscarConcierto.getText();
+   try{
+       txtFNombre.setText(servicioEvento.buscarConcierto(nombre).getNombre());
+       txtFFecha.setText(String.valueOf(servicioEvento.buscarConcierto(nombre).getFecha()));
+       txtFUbicacion.setText(servicioEvento.buscarConcierto(nombre).getUbicacion());
+       txtFPrecio.setText(String.valueOf(servicioEvento.buscarConcierto(nombre).getPrecioEntrada()));
+       txtFTipoMusica.setText(servicioEvento.buscarConcierto(nombre).getTipoMusica());
+       txtFNLocalidades.setText(String.valueOf(servicioEvento.buscarConcierto(nombre).getLocalidades()));
+       txtFArtista.setText(servicioEvento.buscarConcierto(nombre).getArtista().getNombre());
+   }
+   catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void txtFBuscarConciertoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoMousePressed
@@ -373,40 +373,7 @@ public class EliminarConcierto extends javax.swing.JFrame {
      txtFBuscarConcierto.setForeground(Color.black);        // TODO add your handling code here:
     }//GEN-LAST:event_txtFBuscarConciertoMousePressed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EliminarConcierto().setVisible(true);
-            }
-        });
-    }
+ 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;
@@ -420,12 +387,10 @@ public class EliminarConcierto extends javax.swing.JFrame {
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUbicacion;
     private javax.swing.JPanel pnlCenter;
+    private javax.swing.JTextField txtFArtista;
     private javax.swing.JTextField txtFBuscarConcierto;
-    private javax.swing.JTextField txtFFechaAño;
-    private javax.swing.JTextField txtFFechaDIa;
-    private javax.swing.JTextField txtFFechaMes;
+    private javax.swing.JTextField txtFFecha;
     private javax.swing.JTextField txtFNLocalidades;
-    private javax.swing.JTextField txtFNLocalidades1;
     private javax.swing.JTextField txtFNombre;
     private javax.swing.JTextField txtFPrecio;
     private javax.swing.JTextField txtFTipoMusica;

@@ -4,19 +4,25 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.model.FeriaGastronomica;
+import com.lausebas.eventmng.services.ServicioEvento;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author estigia
  */
 public class ListarFeriaGastro extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ListarFeriaGastro
-     */
-    public ListarFeriaGastro() {
+   private ServicioEvento servicioEvento;
+   DefaultTableModel model = new DefaultTableModel();
+   
+    public ListarFeriaGastro(ServicioEvento servicioEvento) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        setModelo();
+        this.servicioEvento = servicioEvento;
     }
 
     /**
@@ -30,7 +36,7 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
 
         lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblConcierto = new javax.swing.JTable();
+        tblFeria = new javax.swing.JTable();
         btnListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -41,7 +47,7 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
         lblTitulo.setText("Listado de Ferias Gastro");
         lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
 
-        tblConcierto.setModel(new javax.swing.table.DefaultTableModel(
+        tblFeria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null},
                 {null, null, null, null, null, null},
@@ -63,12 +69,17 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblConcierto);
+        jScrollPane1.setViewportView(tblFeria);
 
         btnListar.setBackground(new java.awt.Color(5, 44, 77));
         btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
         btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,46 +112,31 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarFeriaGastro.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ListarFeriaGastro().setVisible(true);
-            }
-        });
+    private void setModelo(){
+        String[] cabecera = {"Nombre","Fecha","Ubicacion","Precio","Tipo de Cocina","N Stands"};
+        model.setColumnIdentifiers(cabecera);
+        tblFeria.setModel(model);
     }
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+          Object [] datos = new Object[model.getColumnCount()];
+        for (FeriaGastronomica feriaGastro : servicioEvento.listarFeriasGastronomicas()) {
+           datos[0] = feriaGastro.getNombre();
+           datos[1] =feriaGastro.getFecha().toString();
+           datos[2] = feriaGastro.getUbicacion();
+           datos[3] = String.format("%.2f", feriaGastro.getPrecioEntrada());
+           datos[4] = feriaGastro.getTipoCocina();
+           datos[5] = feriaGastro.getNumStands();
+           model.addRow(datos);
+        }
+        tblFeria.setModel(model);
+    }//GEN-LAST:event_btnListarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnListar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblConcierto;
+    private javax.swing.JTable tblFeria;
     // End of variables declaration//GEN-END:variables
 }

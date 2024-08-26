@@ -15,6 +15,16 @@ public class ServicioArtista {
         this.artistas = artistas;
     }
     
+    public Artista crearArtista(String nombre, String disquera){
+        if (nombre == null || nombre.trim().isEmpty()) {
+        throw new IllegalArgumentException("El nombre no puede ser null ni estar vacío.");
+    }
+    if (disquera == null|| disquera.trim().isEmpty() ) {
+        throw new IllegalArgumentException("La disquera no puede estar vacial.");
+    }
+        return new Artista(nombre, disquera);
+    }
+    
     public void añadirArtista(Artista artista) {
         if (artista == null) {
             throw new IllegalArgumentException("El artista no puede ser null.");
@@ -27,6 +37,14 @@ public class ServicioArtista {
         }
 
         artistas.add(artista);
+    }
+    
+    public Artista buscarArtista(String nombre){
+        for (Artista artista : artistas) {
+            if(artista.getNombre().equalsIgnoreCase(nombre));
+            return artista;
+        }
+        return null;
     }
         
     public ArrayList<Artista> listarArtistas() {

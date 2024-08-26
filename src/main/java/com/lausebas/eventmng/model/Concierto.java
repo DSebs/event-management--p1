@@ -7,15 +7,26 @@ public class Concierto extends Evento {
 
     private Artista artista;
     private int localidades;
+    public String tipoMusica;
      public final static int PERSONAS_POR_LOCALIDAD = 235;
 
-    public Concierto(String nombre, LocalDate fecha, String ubicacion, double precioEntrada, Artista artista, int localidades) {
+    public Concierto(Artista artista, int localidades, String tipoMusica, String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
         super(nombre, fecha, ubicacion, precioEntrada);
         this.artista = artista;
         this.localidades = localidades;
+        this.tipoMusica = tipoMusica;
         verificarInvariantes();
     }
 
+    public String getTipoMusica() {
+        return tipoMusica;
+    }
+
+    public void setTipoMusica(String tipoMusica) {
+        this.tipoMusica = tipoMusica;
+    }
+
+   
     public Artista getArtista() {
         return artista;
     }
@@ -44,5 +55,6 @@ public class Concierto extends Evento {
         super.verificarInvariantes();
         assert artista != null : "El artista no puede ser nulo";
         assert localidades > 0 : "El número de localidades debe ser mayor a 0";
+        assert tipoMusica != null: "El tipo de musica no puede estar vacio";
     }
 }

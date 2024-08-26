@@ -4,19 +4,30 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.model.Artista;
+import com.lausebas.eventmng.services.ServicioArtista;
+import com.lausebas.eventmng.services.ServicioEvento;
+import java.time.LocalDate;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estigia
  */
 public class AñadirConcierto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AñadirConcierto
-     */
-    public AñadirConcierto() {
+   private ServicioEvento servicioEvento;
+   private ServicioArtista servicioArtista;
+   
+    public AñadirConcierto(ServicioEvento servicioEvento, ServicioArtista servicioArtista) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioEvento = servicioEvento;
+        this.servicioArtista = servicioArtista;
+        llenarComboBox();
+        
+        
     }
 
     /**
@@ -48,7 +59,6 @@ public class AñadirConcierto extends javax.swing.JFrame {
         cmbArtista = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(275, 405));
 
         lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
@@ -154,7 +164,6 @@ public class AñadirConcierto extends javax.swing.JFrame {
         cmbArtista.setBackground(new java.awt.Color(5, 44, 77));
         cmbArtista.setFont(new java.awt.Font("URW Gothic", 0, 12)); // NOI18N
         cmbArtista.setForeground(new java.awt.Color(185, 209, 226));
-        cmbArtista.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         cmbArtista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbArtistaActionPerformed(evt);
@@ -255,13 +264,32 @@ public class AñadirConcierto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    public void llenarComboBox(){
+    for (Artista nArtista : servicioArtista.listarArtistas()){
+        cmbArtista.addItem(nArtista.getNombre());
+    }
+}
     private void txtFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFNombreActionPerformed
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        // TODO add your handling code here:
+
+        try{
+            servicioEvento.añadirConcierto(servicioEvento.crearConcierto(servicioArtista.buscarArtista((String) cmbArtista.getSelectedItem()), 
+                                                                                                    Integer.parseInt(txtFNLocalidades.getText()),
+                                                                                                    txtFTipoMusica.getText(),
+                                                                                                    txtFNombre.getText(),
+                                                                                                    LocalDate.of(Integer.parseInt(txtFFechaAño.getText()),
+                                                                                                                            Integer.parseInt(txtFFechaMes.getText()), 
+                                                                                                                            Integer.parseInt(txtFFechaDIa.getText())),
+                                                                                                    txtFUbicacion.getText(),
+                                                                                                    Double.parseDouble(txtFPrecio.getText())));
+             JOptionPane.showMessageDialog(this, "El evento se añadió con éxito.");
+        }
+        catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAñadirActionPerformed
 
     private void txtFUbicacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFUbicacionActionPerformed
@@ -293,43 +321,9 @@ public class AñadirConcierto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFNLocalidadesActionPerformed
 
     private void cmbArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbArtistaActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_cmbArtistaActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AñadirConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AñadirConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AñadirConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AñadirConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AñadirConcierto().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;

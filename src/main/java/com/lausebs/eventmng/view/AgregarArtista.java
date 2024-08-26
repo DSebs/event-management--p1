@@ -4,19 +4,23 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.model.Artista;
+import com.lausebas.eventmng.services.ServicioArtista;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estigia
  */
 public class AgregarArtista extends javax.swing.JFrame {
 
-    /**
-     * Creates new form AgregarArtista
-     */
-    public AgregarArtista() {
+   private ServicioArtista servicioArtista;
+   
+    public AgregarArtista(ServicioArtista servicioArtista) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioArtista = servicioArtista;
     }
 
     /**
@@ -128,43 +132,17 @@ public class AgregarArtista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFDisqueraActionPerformed
 
     private void btnAñadirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAñadirActionPerformed
-        // TODO add your handling code here:
+       String nm = txtFNombre.getText();
+       String dq = txtFDisquera.getText();
+       try{
+       servicioArtista.añadirArtista(servicioArtista.crearArtista(nm, dq));
+       JOptionPane.showMessageDialog(this, "El artista se añadió con éxito.");
+       }
+      catch (IllegalArgumentException e) {
+        JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnAñadirActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AgregarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AgregarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AgregarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(AgregarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new AgregarArtista().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;

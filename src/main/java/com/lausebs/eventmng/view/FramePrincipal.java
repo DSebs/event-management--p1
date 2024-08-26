@@ -4,6 +4,7 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioArtista;
 import com.lausebas.eventmng.services.ServicioEvento;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
@@ -13,12 +14,17 @@ import javax.swing.JOptionPane;
  */
 public class FramePrincipal extends javax.swing.JFrame {
 
+    private ServicioEvento servicioEvento;
+    private ServicioArtista servicioArtista;
+    
     public FramePrincipal() {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
         ArrayList eventos = new ArrayList();
-        ServicioEvento servicioEvt = new ServicioEvento(eventos);
+        ArrayList artistas = new ArrayList();
+        servicioEvento = new ServicioEvento(eventos);
+        servicioArtista = new ServicioArtista(artistas);
     }
 
     /**
@@ -255,27 +261,27 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnISalirActionPerformed
 
     private void mnIBuscarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarConciertoActionPerformed
-     BuscarConcierto buscarConcierto =  new BuscarConcierto();
+     BuscarConcierto buscarConcierto =  new BuscarConcierto(servicioEvento);
      buscarConcierto.setVisible(true);
     }//GEN-LAST:event_mnIBuscarConciertoActionPerformed
 
     private void mnIEliminarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarConciertoActionPerformed
-      EliminarConcierto eliminarConcierto = new EliminarConcierto();  
+      EliminarConcierto eliminarConcierto = new EliminarConcierto(servicioEvento);  
       eliminarConcierto.setVisible(true);
     }//GEN-LAST:event_mnIEliminarConciertoActionPerformed
 
     private void mnIAñadirArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirArtistaActionPerformed
-     AgregarArtista agregarArtista = new AgregarArtista();   
+     AgregarArtista agregarArtista = new AgregarArtista(servicioArtista);   
      agregarArtista.setVisible(true);
     }//GEN-LAST:event_mnIAñadirArtistaActionPerformed
 
     private void mnIAñadirConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirConciertoActionPerformed
-        AñadirConcierto añadirConcierto = new AñadirConcierto();
+        AñadirConcierto añadirConcierto = new AñadirConcierto(servicioEvento, servicioArtista);
         añadirConcierto.setVisible(true);
     }//GEN-LAST:event_mnIAñadirConciertoActionPerformed
 
     private void mnIListarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarConciertoActionPerformed
-        ListarConcierto listarConcierto = new ListarConcierto();
+        ListarConcierto listarConcierto = new ListarConcierto(servicioEvento);
         listarConcierto.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_mnIListarConciertoActionPerformed
 
@@ -285,37 +291,37 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIAcercaDActionPerformed
 
     private void mnIAñadirFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAñadirFeriaActionPerformed
-    AñadirFeriaGastro añadirFeria = new AñadirFeriaGastro();
+    AñadirFeriaGastro añadirFeria = new AñadirFeriaGastro(servicioEvento);
     añadirFeria.setVisible(true);
     }//GEN-LAST:event_mnIAñadirFeriaActionPerformed
 
     private void mnIBuscarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIBuscarFeriaActionPerformed
-     BuscarFeriaGastro buscarFeria = new BuscarFeriaGastro();   
+     BuscarFeriaGastro buscarFeria = new BuscarFeriaGastro(servicioEvento);   
      buscarFeria.setVisible(true);
     }//GEN-LAST:event_mnIBuscarFeriaActionPerformed
 
     private void mnIEliminarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarFeriaActionPerformed
-    EliminarFeriaGastro eliminarFeria = new  EliminarFeriaGastro();  
+    EliminarFeriaGastro eliminarFeria = new  EliminarFeriaGastro(servicioEvento);  
     eliminarFeria.setVisible(true);
     }//GEN-LAST:event_mnIEliminarFeriaActionPerformed
 
     private void mnIListarFeriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarFeriasActionPerformed
-    ListarFeriaGastro listaFeria = new ListarFeriaGastro(); 
+    ListarFeriaGastro listaFeria = new ListarFeriaGastro(servicioEvento); 
     listaFeria.setVisible(true);
     }//GEN-LAST:event_mnIListarFeriasActionPerformed
 
     private void mnIListarArtistasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarArtistasActionPerformed
-     ListarArtista listarArtista = new ListarArtista();   
+     ListarArtista listarArtista = new ListarArtista(servicioArtista);   
      listarArtista.setVisible(true);
     }//GEN-LAST:event_mnIListarArtistasActionPerformed
 
     private void mnICalcularAforoCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnICalcularAforoCActionPerformed
-    CalcularAforoC calcularAC = new CalcularAforoC(); 
+    CalcularAforoC calcularAC = new CalcularAforoC(servicioEvento); 
     calcularAC.setVisible(true);
     }//GEN-LAST:event_mnICalcularAforoCActionPerformed
 
     private void mnICalcularAforoFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnICalcularAforoFActionPerformed
-     CalcularAforoF calcularAF = new CalcularAforoF(); 
+     CalcularAforoF calcularAF = new CalcularAforoF(servicioEvento); 
     calcularAF.setVisible(true);
     }//GEN-LAST:event_mnICalcularAforoFActionPerformed
 

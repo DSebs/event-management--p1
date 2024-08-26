@@ -4,19 +4,26 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.model.Concierto;
+import com.lausebas.eventmng.services.ServicioEvento;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author estigia
  */
 public class ListarConcierto extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ListarConcierto
-     */
-    public ListarConcierto() {
+    private ServicioEvento servicioEvento;
+    DefaultTableModel model = new DefaultTableModel();
+
+       
+    public ListarConcierto(ServicioEvento servicioEvento) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        setModelo();
+        this.servicioEvento = servicioEvento;
     }
 
     /**
@@ -31,7 +38,7 @@ public class ListarConcierto extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         btnListar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tblConcierto = new javax.swing.JTable();
+        tblFeria = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -45,8 +52,13 @@ public class ListarConcierto extends javax.swing.JFrame {
         btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
         btnListar.setForeground(new java.awt.Color(255, 255, 255));
         btnListar.setText("Listar");
+        btnListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnListarActionPerformed(evt);
+            }
+        });
 
-        tblConcierto.setModel(new javax.swing.table.DefaultTableModel(
+        tblFeria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null},
@@ -61,14 +73,14 @@ public class ListarConcierto extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(tblConcierto);
+        jScrollPane1.setViewportView(tblFeria);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -101,46 +113,33 @@ public class ListarConcierto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ListarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ListarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ListarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ListarConcierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new ListarConcierto().setVisible(true);
-            }
-        });
+    private void setModelo(){
+        String[] cabecera = {"Nombre","Fecha","Ubicacion","Precio","Tipo de Musica","Localidades","Artista"};
+        model.setColumnIdentifiers(cabecera);
+        tblFeria.setModel(model);
     }
+
+    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+        
+        Object [] datos = new Object[model.getColumnCount()];
+        for (Concierto concierto : servicioEvento.listarConciertos()) {
+           datos[0] = concierto.getNombre();
+           datos[1] =concierto.getFecha().toString();
+           datos[2] = concierto.getUbicacion();
+           datos[3] = String.format("%.2f", concierto.getPrecioEntrada());
+           datos[4] = concierto.getTipoMusica();
+           datos[5] = concierto.getLocalidades();
+           datos[6] = concierto.getArtista().getNombre();
+           model.addRow(datos);
+        }
+        tblFeria.setModel(model);
+    }//GEN-LAST:event_btnListarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnListar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
-    private javax.swing.JTable tblConcierto;
+    private javax.swing.JTable tblFeria;
     // End of variables declaration//GEN-END:variables
 }
