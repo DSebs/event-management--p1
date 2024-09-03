@@ -6,7 +6,6 @@
 
 import com.lausebas.eventmng.services.ServicioArtista;
 import com.lausebas.eventmng.services.ServicioEvento;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 /**
  *
@@ -22,10 +21,8 @@ public class FramePrincipal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
-        ArrayList eventos = new ArrayList();
-        ArrayList artistas = new ArrayList();
-        servicioEvento = new ServicioEvento(eventos);
-        servicioArtista = new ServicioArtista(artistas);
+        servicioEvento = new ServicioEvento();
+        servicioArtista = new ServicioArtista();
     }
 
     /**

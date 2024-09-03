@@ -13,8 +13,8 @@ public class ServicioEvento {
 
     private ArrayList<Evento> eventos;
 
-    public ServicioEvento(ArrayList<Evento> eventos) {
-        this.eventos = eventos;
+    public ServicioEvento() {
+        eventos = new ArrayList();
     }
 
     public Concierto crearConcierto(Artista artista, int localidades, String tipoMusica, String nombre, LocalDate fecha, String ubicacion, double precioEntrada){
@@ -37,7 +37,7 @@ public class ServicioEvento {
          throw new IllegalArgumentException("Tiene que haber por lo menos una localidad");
     }
     if(tipoMusica ==  null){
-         throw new IllegalArgumentException("Tiene que haber por lo menos una localidad");
+         throw new IllegalArgumentException("El tipo de musica no puede estar vacio");
     }
         Concierto concert = new Concierto(artista, localidades, tipoMusica, nombre, fecha, ubicacion, precioEntrada);
         return concert;
@@ -57,10 +57,10 @@ public class ServicioEvento {
         throw new IllegalArgumentException("El precio de la entrada debe ser mayor a 0.");
     }
     if(tipoCocina == null){
-         throw new IllegalArgumentException("Se tiene que elegir por lo menos un artista");
+         throw new IllegalArgumentException("El tipo de cocina no puede ir vacio");
     }
     if(numStands<= 0){
-         throw new IllegalArgumentException("Tiene que haber por lo menos una localidad");
+         throw new IllegalArgumentException("Tiene que haber por lo menos un stand");
     }
         FeriaGastronomica feriaG = new FeriaGastronomica(numStands,tipoCocina,expandible,nombre,fecha,ubicacion,precioEntrada);
         return feriaG;

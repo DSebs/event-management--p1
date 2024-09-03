@@ -11,8 +11,8 @@ public class ServicioArtista {
     
     private ArrayList<Artista> artistas;   
 
-    public ServicioArtista(ArrayList<Artista> artistas) {
-        this.artistas = artistas;
+    public ServicioArtista() {
+        artistas = new ArrayList();
     }
     
     public Artista crearArtista(String nombre, String disquera){
