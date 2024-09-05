@@ -43,6 +43,9 @@ public class ServicioEvento {
         return concert;
     }
     
+    
+    
+    
     public FeriaGastronomica crearFeriaGastro(int numStands, String tipoCocina, boolean expandible, String nombre, LocalDate fecha, String ubicacion, double precioEntrada){
     if (nombre == null || nombre.trim().isEmpty()) {
         throw new IllegalArgumentException("El nombre no puede ser null ni estar vacío.");
@@ -65,6 +68,59 @@ public class ServicioEvento {
         FeriaGastronomica feriaG = new FeriaGastronomica(numStands,tipoCocina,expandible,nombre,fecha,ubicacion,precioEntrada);
         return feriaG;
     }
+    
+    public void actualizarFeriaGas(FeriaGastronomica feriaGastronomica, int numStands, String tipoCocina, boolean expandible, LocalDate fecha, String ubicacion, double precioEntrada){
+    
+        if (fecha == null) {
+            throw new IllegalArgumentException("La fecha no puede ser null.");
+        }
+        if (ubicacion == null || ubicacion.trim().isEmpty()) {
+            throw new IllegalArgumentException("La ubicación no puede ser null ni estar vacía.");
+        }
+        if (precioEntrada <= 0) {
+            throw new IllegalArgumentException("El precio de la entrada debe ser mayor a 0.");
+        }
+        if(tipoCocina == null){
+             throw new IllegalArgumentException("El tipo de cocina no puede ir vacio");
+        }
+        if(numStands<= 0){
+             throw new IllegalArgumentException("Tiene que haber por lo menos un stand");
+        }
+     feriaGastronomica.setFecha(fecha);
+     feriaGastronomica.setNumStands(numStands);
+     feriaGastronomica.setPrecioEntrada(precioEntrada);
+     feriaGastronomica.setTipoCocina(tipoCocina);
+     feriaGastronomica.setUbicacion(ubicacion);
+     feriaGastronomica.setExpandible(expandible);
+
+    }
+    
+    public void actualizarConcierto(Concierto concierto,Artista artista, int localidades, String tipoMusica, LocalDate fecha, String ubicacion, double precioEntrada ){
+        if (fecha == null) {
+            throw new IllegalArgumentException("La fecha no puede ser null.");
+        }
+        if (ubicacion == null || ubicacion.trim().isEmpty()) {
+            throw new IllegalArgumentException("La ubicación no puede ser null ni estar vacía.");
+        }
+        if (precioEntrada <= 0) {
+            throw new IllegalArgumentException("El precio de la entrada debe ser mayor a 0.");
+        }
+        if(tipoMusica == null){
+             throw new IllegalArgumentException("El tipo de musica no puede ir vacio");
+        }
+        if(localidades<= 0){
+             throw new IllegalArgumentException("El numero de localidades debe ser mayor a 0");
+        }
+        
+        concierto.setArtista(artista);
+        concierto.setFecha(fecha);
+        concierto.setLocalidades(localidades);
+        concierto.setPrecioEntrada(precioEntrada);
+        concierto.setTipoMusica(tipoMusica);
+        concierto.setUbicacion(ubicacion);
+        
+    }
+            
     
     public void añadirConcierto(Concierto concierto) {
         if (concierto == null) {

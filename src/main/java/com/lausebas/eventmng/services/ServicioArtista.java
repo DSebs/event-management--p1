@@ -39,6 +39,16 @@ public class ServicioArtista {
         artistas.add(artista);
     }
     
+    public void actualizarArtista(Artista artista, String disquera){
+        if (artista == null) {
+            throw new IllegalArgumentException("El artista no puede ser null.");
+        }
+        if (disquera == null|| disquera.trim().isEmpty() ) {
+        throw new IllegalArgumentException("La disquera no puede estar vacial.");
+    }
+        artista.setDisquera(disquera);
+    }
+    
     public Artista buscarArtista(String nombre){
         for (Artista artista : artistas) {
             if(artista.getNombre().equalsIgnoreCase(nombre)){
@@ -46,6 +56,16 @@ public class ServicioArtista {
         }
     }
          return null;
+    }
+    
+     public void eliminarArtista(Artista artista) {
+        if (artista == null) {
+            throw new IllegalArgumentException("El artista no puede ser null.");
+        }
+
+        if (!artistas.remove(artista)) {
+            throw new IllegalArgumentException("El evento no se encuentra en la lista.");
+        }
     }
     
     public ArrayList<Artista> listarArtistas() {
