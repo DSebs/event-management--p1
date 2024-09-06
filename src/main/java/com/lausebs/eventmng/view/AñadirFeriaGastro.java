@@ -7,6 +7,7 @@ package com.lausebs.eventmng.view;
 import com.lausebas.eventmng.services.ServicioEvento;
 import java.awt.Color;
 import java.time.LocalDate;
+import java.time.ZoneId;
 import javax.swing.JOptionPane;
 
 /**
@@ -38,10 +39,7 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         lblPrecio = new javax.swing.JLabel();
         txtFUbicacion = new javax.swing.JTextField();
         txtFPrecio = new javax.swing.JTextField();
-        txtFFechaDIa = new javax.swing.JTextField();
-        txtFFechaMes = new javax.swing.JTextField();
         lblTitulo = new javax.swing.JLabel();
-        txtFFechaAño = new javax.swing.JTextField();
         lblNombre = new javax.swing.JLabel();
         lblTipoCocina = new javax.swing.JLabel();
         txtFNombre = new javax.swing.JTextField();
@@ -51,6 +49,7 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         lblUbicacion = new javax.swing.JLabel();
         btnAñadir = new javax.swing.JButton();
         chExpandible = new javax.swing.JCheckBox();
+        dtcFecha = new com.toedter.calendar.JDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -81,60 +80,11 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
             }
         });
 
-        txtFFechaDIa.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaDIa.setForeground(new java.awt.Color(153, 153, 153));
-        txtFFechaDIa.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFFechaDIa.setText("D");
-        txtFFechaDIa.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaDIa.setPreferredSize(new java.awt.Dimension(325, 401));
-        txtFFechaDIa.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtFFechaDIaMousePressed(evt);
-            }
-        });
-        txtFFechaDIa.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaDIaActionPerformed(evt);
-            }
-        });
-
-        txtFFechaMes.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaMes.setForeground(new java.awt.Color(153, 153, 153));
-        txtFFechaMes.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFFechaMes.setText("M");
-        txtFFechaMes.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaMes.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtFFechaMesMousePressed(evt);
-            }
-        });
-        txtFFechaMes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaMesActionPerformed(evt);
-            }
-        });
-
         lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 22)); // NOI18N
         lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Añadir Feria Gastro");
         lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        txtFFechaAño.setBackground(new java.awt.Color(185, 209, 226));
-        txtFFechaAño.setForeground(new java.awt.Color(153, 153, 153));
-        txtFFechaAño.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        txtFFechaAño.setText("Y");
-        txtFFechaAño.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
-        txtFFechaAño.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mousePressed(java.awt.event.MouseEvent evt) {
-                txtFFechaAñoMousePressed(evt);
-            }
-        });
-        txtFFechaAño.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtFFechaAñoActionPerformed(evt);
-            }
-        });
 
         lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
@@ -185,6 +135,8 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
             }
         });
 
+        dtcFecha.setBackground(new java.awt.Color(185, 209, 226));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -193,6 +145,9 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                 .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 21, Short.MAX_VALUE)
+                        .addComponent(lblTitulo))
+                    .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(lblPrecio)
                             .addComponent(lblNStands)
@@ -200,25 +155,15 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                             .addComponent(lblTipoCocina)
                             .addComponent(lblFecha)
                             .addComponent(lblNombre))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(txtFTipoCocina)
-                                .addComponent(txtFUbicacion)
-                                .addComponent(txtFPrecio)
-                                .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lblTitulo)))
-                .addGap(50, 50, 50))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtFTipoCocina)
+                            .addComponent(txtFPrecio)
+                            .addComponent(txtFNombre, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(dtcFecha, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+                            .addComponent(txtFUbicacion, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtFNStands))))
+                .addGap(29, 29, 29))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -251,11 +196,8 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(txtFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtFFechaDIa, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFFechaMes, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtFFechaAño, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
+                        .addComponent(dtcFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(16, 16, 16)
                         .addComponent(txtFUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(txtFPrecio, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -285,18 +227,6 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFPrecioActionPerformed
 
-    private void txtFFechaDIaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaDIaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaDIaActionPerformed
-
-    private void txtFFechaMesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaMesActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaMesActionPerformed
-
-    private void txtFFechaAñoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFFechaAñoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtFFechaAñoActionPerformed
-
     private void txtFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNombreActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtFNombreActionPerformed
@@ -311,17 +241,15 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
                                                                                                                                           txtFTipoCocina.getText(),
                                                                                                                                           chExpandible.isSelected(),
                                                                                                                                           txtFNombre.getText(),
-                                                                                                                                           LocalDate.of(Integer.parseInt(txtFFechaAño.getText()),
-                                                                                                                                                                    Integer.parseInt(txtFFechaMes.getText()), 
-                                                                                                                                                                    Integer.parseInt(txtFFechaDIa.getText())),
+                                                                                                                                           dtcFecha.getDate().
+                                                                                                                                           toInstant().atZone(ZoneId.systemDefault())
+                                                                                                                                           .toLocalDate(),
                                                                                                                                            txtFUbicacion.getText(),
                                                                                                                                            Double.parseDouble(txtFPrecio.getText())));
                      JOptionPane.showMessageDialog(this, "El evento se añadió con éxito.");
-                                  txtFNombre.setText("");
-             txtFFechaDIa.setText("");
-             txtFFechaMes.setText("");
-             txtFFechaAño.setText("");
+             txtFNombre.setText("");
              txtFUbicacion.setText("");
+             dtcFecha.setDate(null);
              txtFPrecio.setText("");
              txtFTipoCocina.setText("");
              txtFNStands.setText("");
@@ -335,23 +263,11 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_chExpandibleActionPerformed
 
-    private void txtFFechaDIaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFFechaDIaMousePressed
-        txtFFechaDIa.setText("");
-        txtFFechaDIa.setForeground(Color.black);    }//GEN-LAST:event_txtFFechaDIaMousePressed
-
-    private void txtFFechaMesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFFechaMesMousePressed
-        txtFFechaMes.setText("");
-        txtFFechaMes.setForeground(Color.black);    }//GEN-LAST:event_txtFFechaMesMousePressed
-
-    private void txtFFechaAñoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFFechaAñoMousePressed
-        txtFFechaAño.setText("");
-        txtFFechaAño.setForeground(Color.black);
-    }//GEN-LAST:event_txtFFechaAñoMousePressed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAñadir;
     private javax.swing.JCheckBox chExpandible;
+    private com.toedter.calendar.JDateChooser dtcFecha;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNStands;
     private javax.swing.JLabel lblNombre;
@@ -359,9 +275,6 @@ public class AñadirFeriaGastro extends javax.swing.JFrame {
     private javax.swing.JLabel lblTipoCocina;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblUbicacion;
-    private javax.swing.JTextField txtFFechaAño;
-    private javax.swing.JTextField txtFFechaDIa;
-    private javax.swing.JTextField txtFFechaMes;
     private javax.swing.JTextField txtFNStands;
     private javax.swing.JTextField txtFNombre;
     private javax.swing.JTextField txtFPrecio;

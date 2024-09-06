@@ -44,18 +44,23 @@ public class FramePrincipal extends javax.swing.JFrame {
         mnIBuscarConcierto = new javax.swing.JMenuItem();
         mnIEliminarConcierto = new javax.swing.JMenuItem();
         mnIListarConcierto = new javax.swing.JMenuItem();
+        mnActualizarConcierto = new javax.swing.JMenuItem();
         mnICalcularAforoC = new javax.swing.JMenuItem();
         mnFeriaGastro = new javax.swing.JMenu();
         mnIAñadirFeria = new javax.swing.JMenuItem();
         mnIBuscarFeria = new javax.swing.JMenuItem();
         mnIEliminarFeria = new javax.swing.JMenuItem();
         mnIListarFerias = new javax.swing.JMenuItem();
+        mnActualizarFeria = new javax.swing.JMenuItem();
         mnICalcularAforoF = new javax.swing.JMenuItem();
         mnArtista = new javax.swing.JMenu();
         mnIAñadirArtista = new javax.swing.JMenuItem();
         mnIListarArtistas = new javax.swing.JMenuItem();
+        mnIActualizarArtista = new javax.swing.JMenuItem();
+        mnIEliminarArtista = new javax.swing.JMenuItem();
         mnAyuda = new javax.swing.JMenu();
         mnIAcercaD = new javax.swing.JMenuItem();
+        mnIInfoEmpresa = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("FramePrincipal");
@@ -127,6 +132,15 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnConcierto.add(mnIListarConcierto);
 
+        mnActualizarConcierto.setForeground(new java.awt.Color(5, 44, 77));
+        mnActualizarConcierto.setText("Actualizar Concierto");
+        mnActualizarConcierto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnActualizarConciertoActionPerformed(evt);
+            }
+        });
+        mnConcierto.add(mnActualizarConcierto);
+
         mnICalcularAforoC.setForeground(new java.awt.Color(5, 44, 77));
         mnICalcularAforoC.setText("Calcular aforo");
         mnICalcularAforoC.addActionListener(new java.awt.event.ActionListener() {
@@ -177,6 +191,15 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnFeriaGastro.add(mnIListarFerias);
 
+        mnActualizarFeria.setForeground(new java.awt.Color(5, 44, 77));
+        mnActualizarFeria.setText("Actualizar Feria");
+        mnActualizarFeria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnActualizarFeriaActionPerformed(evt);
+            }
+        });
+        mnFeriaGastro.add(mnActualizarFeria);
+
         mnICalcularAforoF.setForeground(new java.awt.Color(5, 44, 77));
         mnICalcularAforoF.setText("Calcular aforo");
         mnICalcularAforoF.addActionListener(new java.awt.event.ActionListener() {
@@ -209,6 +232,24 @@ public class FramePrincipal extends javax.swing.JFrame {
         });
         mnArtista.add(mnIListarArtistas);
 
+        mnIActualizarArtista.setForeground(new java.awt.Color(5, 44, 77));
+        mnIActualizarArtista.setText("Actualizar Artista");
+        mnIActualizarArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIActualizarArtistaActionPerformed(evt);
+            }
+        });
+        mnArtista.add(mnIActualizarArtista);
+
+        mnIEliminarArtista.setForeground(new java.awt.Color(5, 44, 77));
+        mnIEliminarArtista.setText("Eliminar Artista");
+        mnIEliminarArtista.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIEliminarArtistaActionPerformed(evt);
+            }
+        });
+        mnArtista.add(mnIEliminarArtista);
+
         barraMenu.add(mnArtista);
 
         mnAyuda.setBackground(new java.awt.Color(5, 44, 77));
@@ -223,6 +264,15 @@ public class FramePrincipal extends javax.swing.JFrame {
             }
         });
         mnAyuda.add(mnIAcercaD);
+
+        mnIInfoEmpresa.setForeground(new java.awt.Color(5, 44, 77));
+        mnIInfoEmpresa.setText("Nosotros ...");
+        mnIInfoEmpresa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnIInfoEmpresaActionPerformed(evt);
+            }
+        });
+        mnAyuda.add(mnIInfoEmpresa);
 
         barraMenu.add(mnAyuda);
 
@@ -284,7 +334,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIListarConciertoActionPerformed
 
     private void mnIAcercaDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIAcercaDActionPerformed
-                JOptionPane.showMessageDialog(this, "Desarrollado por Laura Gomez & Sebastian Diaz \n                              Version 1.0");
+                JOptionPane.showMessageDialog(this, "Desarrollado por Laura Gomez & Sebastian Diaz \n                              Version 2.0");
 
     }//GEN-LAST:event_mnIAcercaDActionPerformed
 
@@ -322,6 +372,31 @@ public class FramePrincipal extends javax.swing.JFrame {
      CalcularAforoF calcularAF = new CalcularAforoF(servicioEvento); 
     calcularAF.setVisible(true);
     }//GEN-LAST:event_mnICalcularAforoFActionPerformed
+
+    private void mnActualizarFeriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnActualizarFeriaActionPerformed
+       ActualizarFeria actualizarFeria = new ActualizarFeria(servicioEvento);
+       actualizarFeria.setVisible(true);
+    }//GEN-LAST:event_mnActualizarFeriaActionPerformed
+
+    private void mnIActualizarArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIActualizarArtistaActionPerformed
+        ActualizarArtista actualizarArtist = new ActualizarArtista();
+        actualizarArtist.setVisible(true);
+    }//GEN-LAST:event_mnIActualizarArtistaActionPerformed
+
+    private void mnIEliminarArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarArtistaActionPerformed
+       EliminarArtista eliminarArtist = new EliminarArtista();
+       eliminarArtist.setVisible(true);
+    }//GEN-LAST:event_mnIEliminarArtistaActionPerformed
+
+    private void mnIInfoEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIInfoEmpresaActionPerformed
+        InfoEmpresa infoEmpresa = new InfoEmpresa();
+        infoEmpresa.setVisible(true);
+    }//GEN-LAST:event_mnIInfoEmpresaActionPerformed
+
+    private void mnActualizarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnActualizarConciertoActionPerformed
+        ActualizarConcierto actuConcierto = new ActualizarConcierto(servicioEvento, servicioArtista);
+        actuConcierto.setVisible(true);
+    }//GEN-LAST:event_mnActualizarConciertoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -362,12 +437,15 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar barraMenu;
     private javax.swing.JLabel lblIcon;
     private javax.swing.JLabel lblPNombre;
+    private javax.swing.JMenuItem mnActualizarConcierto;
+    private javax.swing.JMenuItem mnActualizarFeria;
     private javax.swing.JMenu mnArchivo;
     private javax.swing.JMenu mnArtista;
     private javax.swing.JMenu mnAyuda;
     private javax.swing.JMenu mnConcierto;
     private javax.swing.JMenu mnFeriaGastro;
     private javax.swing.JMenuItem mnIAcercaD;
+    private javax.swing.JMenuItem mnIActualizarArtista;
     private javax.swing.JMenuItem mnIAñadirArtista;
     private javax.swing.JMenuItem mnIAñadirConcierto;
     private javax.swing.JMenuItem mnIAñadirFeria;
@@ -375,8 +453,10 @@ public class FramePrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem mnIBuscarFeria;
     private javax.swing.JMenuItem mnICalcularAforoC;
     private javax.swing.JMenuItem mnICalcularAforoF;
+    private javax.swing.JMenuItem mnIEliminarArtista;
     private javax.swing.JMenuItem mnIEliminarConcierto;
     private javax.swing.JMenuItem mnIEliminarFeria;
+    private javax.swing.JMenuItem mnIInfoEmpresa;
     private javax.swing.JMenuItem mnIListarArtistas;
     private javax.swing.JMenuItem mnIListarConcierto;
     private javax.swing.JMenuItem mnIListarFerias;
