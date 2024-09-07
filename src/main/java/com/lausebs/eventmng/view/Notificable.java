@@ -12,11 +12,9 @@ import com.lausebas.eventmng.model.Evento;
  */
 public interface Notificable {
     
-    public  void avisoCreacion(Evento evento);
+    public  void avisoCambio();
     
-    public void avisoActualizacion(Evento evento);
-    
-    public void avisoEliminacion(Evento evento);
+
     
         
     

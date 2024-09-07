@@ -42,7 +42,7 @@ public class ServicioEvento {
             throw new IllegalArgumentException("El tipo de musica no puede estar vacio");
         }
         Concierto concert = new Concierto(artista, localidades, tipoMusica, nombre, fecha, ubicacion, precioEntrada);
-        servicioObserver.notificarCreacion(concert);
+        servicioObserver.notificarCambio();
         return concert;
     }
 
@@ -66,7 +66,7 @@ public class ServicioEvento {
             throw new IllegalArgumentException("Tiene que haber por lo menos un stand");
         }
         FeriaGastronomica feriaG = new FeriaGastronomica(numStands, tipoCocina, expandible, nombre, fecha, ubicacion, precioEntrada);
-        servicioObserver.notificarCreacion(feriaG);
+          servicioObserver.notificarCambio();
         return feriaG;
     }
 
@@ -94,7 +94,7 @@ public class ServicioEvento {
         feriaGastronomica.setUbicacion(ubicacion);
         feriaGastronomica.setExpandible(expandible);
 
-        servicioObserver.notificarActualizacion(feriaGastronomica);
+          servicioObserver.notificarCambio();
 
     }
 
@@ -122,7 +122,7 @@ public class ServicioEvento {
         concierto.setTipoMusica(tipoMusica);
         concierto.setUbicacion(ubicacion);
 
-        servicioObserver.notificarActualizacion(concierto);
+         servicioObserver.notificarCambio();
     }
 
     public void añadirConcierto(Concierto concierto) {
@@ -187,7 +187,7 @@ public class ServicioEvento {
         if (!eventos.remove(concierto)) {
             throw new IllegalArgumentException("El evento no se encuentra en la lista.");
         }
-        servicioObserver.notificarEliminacion(concierto);
+          servicioObserver.notificarCambio();
     }
 
     public void eliminarFeriaGastro(FeriaGastronomica feriaGastro) {
@@ -199,7 +199,7 @@ public class ServicioEvento {
             throw new IllegalArgumentException("El evento no se encuentra en la lista.");
         }
 
-        servicioObserver.notificarEliminacion(feriaGastro);
+         servicioObserver.notificarCambio();
     }
 
     public ArrayList<Concierto> listarConciertos() {

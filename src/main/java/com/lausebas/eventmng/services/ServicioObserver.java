@@ -29,45 +29,13 @@ public class ServicioObserver {
         
     }
     
-    public void notificarCreacion(Evento evento){
+    public void notificarCambio(){
         for (Notificable igInteresada : igInteresadas) {
-            if(evento instanceof Concierto){
-                igInteresada.avisoCreacion((Concierto)evento);
-                
+                igInteresada.avisoCambio();
             }
-            else if(evento instanceof FeriaGastronomica){
-                igInteresada.avisoCreacion((FeriaGastronomica)evento);
-            }
-            
-        }
- 
     }
     
-    public void notificarActualizacion(Evento evento){
-        for (Notificable igInteresada : igInteresadas) {
-            if(evento instanceof Concierto){
-                igInteresada.avisoActualizacion((Concierto)evento);
-                
-            }
-            else if(evento instanceof FeriaGastronomica){
-                igInteresada.avisoActualizacion((FeriaGastronomica)evento);
-            }
-            
-        } 
-    }
     
-    public void notificarEliminacion(Evento evento){
-         for (Notificable igInteresada : igInteresadas) {
-            if(evento instanceof Concierto){
-                igInteresada.avisoEliminacion((Concierto)evento);
-                
-            }
-            else if(evento instanceof FeriaGastronomica){
-                igInteresada.avisoEliminacion((FeriaGastronomica)evento);
-            }
-            
-        }
-    }
     
     public void eliminarigInteresadas(Notificable igInteresada){
         igInteresadas.remove(igInteresada);
