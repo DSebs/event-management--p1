@@ -6,6 +6,7 @@ package com.lausebs.eventmng.view;
 
 import com.lausebas.eventmng.services.ServicioEvento;
 import java.awt.Color;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -16,11 +17,11 @@ import javax.swing.JOptionPane;
  */
 public class ActualizarFeria extends javax.swing.JFrame {
 
-private ServicioEvento servicioEvento;
+    private ServicioEvento servicioEvento;
 
     public ActualizarFeria(ServicioEvento servicioEvento) {
         initComponents();
-         setLocationRelativeTo(this);
+        setLocationRelativeTo(this);
         setResizable(false);
         this.servicioEvento = servicioEvento;
     }
@@ -50,6 +51,7 @@ private ServicioEvento servicioEvento;
         txtFTipoCocina = new javax.swing.JTextField();
         lblNStands = new javax.swing.JLabel();
         dtcFecha = new com.toedter.calendar.JDateChooser();
+        chExpandible = new javax.swing.JCheckBox();
         btnActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -150,6 +152,15 @@ private ServicioEvento servicioEvento;
 
         dtcFecha.setEnabled(false);
 
+        chExpandible.setForeground(new java.awt.Color(5, 44, 77));
+        chExpandible.setText("Expandible");
+        chExpandible.setEnabled(false);
+        chExpandible.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                chExpandibleActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout pnlCenterLayout = new javax.swing.GroupLayout(pnlCenter);
         pnlCenter.setLayout(pnlCenterLayout);
         pnlCenterLayout.setHorizontalGroup(
@@ -172,6 +183,10 @@ private ServicioEvento servicioEvento;
                     .addComponent(txtFPrecio)
                     .addComponent(dtcFecha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE))
                 .addContainerGap(11, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlCenterLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(chExpandible)
+                .addGap(74, 74, 74))
         );
         pnlCenterLayout.setVerticalGroup(
             pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,7 +215,9 @@ private ServicioEvento servicioEvento;
                 .addGroup(pnlCenterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNStands)
                     .addComponent(txtFNStands, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32))
+                .addGap(18, 18, 18)
+                .addComponent(chExpandible, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         btnActualizar.setBackground(new java.awt.Color(5, 44, 77));
@@ -221,9 +238,6 @@ private ServicioEvento servicioEvento;
                 .addContainerGap(36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(btnActualizar)
-                        .addGap(133, 133, 133))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(btnBuscar)
@@ -234,6 +248,10 @@ private ServicioEvento servicioEvento;
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(lblTitulo)
                         .addGap(40, 40, 40))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(124, 124, 124)
+                .addComponent(btnActualizar)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,11 +262,11 @@ private ServicioEvento servicioEvento;
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnBuscar)
                     .addComponent(txtFBuscarFeriaGastro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(20, 20, 20)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(pnlCenter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(btnActualizar)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(43, 43, 43))
         );
 
         pack();
@@ -256,11 +274,11 @@ private ServicioEvento servicioEvento;
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         String nombre = txtFBuscarFeriaGastro.getText();
-        try{
+        try {
             txtFNombre.setText(servicioEvento.buscarFeriaGastro(nombre).getNombre());
             dtcFecha.setDate(Date.from(
-                               servicioEvento.buscarFeriaGastro(nombre).getFecha().
-                               atStartOfDay(ZoneId.systemDefault()).toInstant()));
+                    servicioEvento.buscarFeriaGastro(nombre).getFecha().
+                            atStartOfDay(ZoneId.systemDefault()).toInstant()));
             txtFUbicacion.setText(servicioEvento.buscarFeriaGastro(nombre).getUbicacion());
             txtFPrecio.setText(String.valueOf(servicioEvento.buscarFeriaGastro(nombre).getPrecioEntrada()));
             txtFTipoCocina.setText(servicioEvento.buscarFeriaGastro(nombre).getTipoCocina());
@@ -270,8 +288,8 @@ private ServicioEvento servicioEvento;
             txtFPrecio.setEditable(true);
             txtFTipoCocina.setEditable(true);
             txtFNStands.setEditable(true);
-        }
-        catch (IllegalArgumentException e) {
+            chExpandible.setEnabled(true);
+        } catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -306,13 +324,48 @@ private ServicioEvento servicioEvento;
     }//GEN-LAST:event_txtFTipoCocinaActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-      
+
+        try {
+            servicioEvento.actualizarFeriaGas(servicioEvento.buscarFeriaGastro(txtFNombre.getText()),
+                    Integer.parseInt(txtFNStands.getText()),
+                    txtFTipoCocina.getText(),
+                    chExpandible.isSelected(),
+                    dtcFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+                    txtFUbicacion.getText(),
+                    Double.parseDouble(txtFPrecio.getText()));
+            JOptionPane.showMessageDialog(this, "La Feria Gastronomica se actualizo con éxito.");
+            
+            txtFNombre.setText("");
+            txtFUbicacion.setText("");
+            dtcFecha.setDate(null);
+            txtFPrecio.setText("");
+            txtFTipoCocina.setText("");
+            txtFNStands.setText("");
+            txtFBuscarFeriaGastro.setText("");
+            
+            chExpandible.setSelected(false);
+            chExpandible.setEnabled(false);
+            txtFUbicacion.setEditable(false);
+            dtcFecha.setEnabled(false);
+            txtFPrecio.setEditable(false);
+            txtFTipoCocina.setEditable(false);
+            txtFNStands.setEditable(false);
+            chExpandible.setEnabled(false);
+            
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void chExpandibleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_chExpandibleActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_chExpandibleActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
     private javax.swing.JButton btnBuscar;
+    private javax.swing.JCheckBox chExpandible;
     private com.toedter.calendar.JDateChooser dtcFecha;
     private javax.swing.JLabel lblFecha;
     private javax.swing.JLabel lblNStands;

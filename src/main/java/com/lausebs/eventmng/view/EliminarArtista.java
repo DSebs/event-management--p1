@@ -4,19 +4,23 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioArtista;
+import java.awt.Color;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author estigia
  */
 public class EliminarArtista extends javax.swing.JFrame {
 
-    /**
-     * Creates new form EliminarArtista
-     */
-    public EliminarArtista() {
+    private ServicioArtista servicioArtista;
+
+    public EliminarArtista(ServicioArtista servicioArtista) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioArtista = servicioArtista;
     }
 
     /**
@@ -45,6 +49,7 @@ public class EliminarArtista extends javax.swing.JFrame {
         lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
 
+        txtFNombre.setEditable(false);
         txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
         txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -56,6 +61,7 @@ public class EliminarArtista extends javax.swing.JFrame {
         lblDisquera.setForeground(new java.awt.Color(5, 44, 77));
         lblDisquera.setText("Disquera");
 
+        txtFDisquera.setEditable(false);
         txtFDisquera.setBackground(new java.awt.Color(185, 209, 226));
         txtFDisquera.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFDisquera.addActionListener(new java.awt.event.ActionListener() {
@@ -188,11 +194,35 @@ public class EliminarArtista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFDisqueraActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
+        String nombre = txtFBuscarArtista.getText();
+        try {
+            int confirmacion = JOptionPane.showConfirmDialog(this,
+                    "¿Está seguro que desea eliminar el artista " + nombre + "?",
+                    "Confirmar eliminación",
+                    JOptionPane.YES_NO_OPTION);
 
+            // Si el usuario confirma, eliminar el concierto
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                servicioArtista.eliminarArtista(servicioArtista.buscarArtista(nombre));
+                JOptionPane.showMessageDialog(this, "Artista eliminado exitosamente.",
+                        "Eliminación exitosa",
+                        JOptionPane.INFORMATION_MESSAGE);
+                txtFNombre.setText("");
+                txtFDisquera.setText("");
+                txtFBuscarArtista.setText("");
+            } else {
+                JOptionPane.showMessageDialog(this, "No se elimino el concierto",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnEliminarActionPerformed
 
     private void txtFBuscarArtistaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarArtistaMousePressed
-
+        txtFBuscarArtista.setText("");
+        txtFBuscarArtista.setForeground(Color.black);
     }//GEN-LAST:event_txtFBuscarArtistaMousePressed
 
     private void txtFBuscarArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFBuscarArtistaActionPerformed
@@ -200,43 +230,15 @@ public class EliminarArtista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFBuscarArtistaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-
+        String nombre = txtFBuscarArtista.getText();
+        try {
+            txtFNombre.setText(servicioArtista.buscarArtista(nombre).getNombre());
+            txtFDisquera.setText(servicioArtista.buscarArtista(nombre).getDisquera());
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(EliminarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(EliminarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(EliminarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(EliminarArtista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new EliminarArtista().setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBuscar;

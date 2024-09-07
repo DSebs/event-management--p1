@@ -4,7 +4,9 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioArtista;
 import java.awt.Color;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -12,13 +14,13 @@ import java.awt.Color;
  */
 public class ActualizarArtista extends javax.swing.JFrame {
 
-    /**
-     * Creates new form ActualizarArtista
-     */
-    public ActualizarArtista() {
+    private ServicioArtista servicioArtista;
+
+    public ActualizarArtista(ServicioArtista servicioArtista) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioArtista = servicioArtista;
     }
 
     /**
@@ -76,6 +78,7 @@ public class ActualizarArtista extends javax.swing.JFrame {
         lblNombre.setForeground(new java.awt.Color(5, 44, 77));
         lblNombre.setText("Nombre");
 
+        txtFNombre.setEditable(false);
         txtFNombre.setBackground(new java.awt.Color(185, 209, 226));
         txtFNombre.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFNombre.addActionListener(new java.awt.event.ActionListener() {
@@ -87,6 +90,7 @@ public class ActualizarArtista extends javax.swing.JFrame {
         lblDisquera.setForeground(new java.awt.Color(5, 44, 77));
         lblDisquera.setText("Disquera");
 
+        txtFDisquera.setEditable(false);
         txtFDisquera.setBackground(new java.awt.Color(185, 209, 226));
         txtFDisquera.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(5, 44, 77), 1, true));
         txtFDisquera.addActionListener(new java.awt.event.ActionListener() {
@@ -190,12 +194,30 @@ public class ActualizarArtista extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFBuscarArtistaActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-
+        String nombre = txtFBuscarArtista.getText();
+        try {
+            txtFNombre.setText(servicioArtista.buscarArtista(nombre).getNombre());
+            txtFDisquera.setText(servicioArtista.buscarArtista(nombre).getDisquera());
+            txtFDisquera.setEditable(true);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
+        String nm = txtFNombre.getText();
+        String dq = txtFDisquera.getText();
 
-   
+        try {
+            servicioArtista.actualizarArtista(servicioArtista.buscarArtista(nm), dq);
+            JOptionPane.showMessageDialog(this, "El artista se actualizo con éxito.");
+            txtFNombre.setText("");
+            txtFDisquera.setText("");
+            txtFBuscarArtista.setText("");
+            txtFDisquera.setEditable(false);
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void txtFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtFNombreActionPerformed

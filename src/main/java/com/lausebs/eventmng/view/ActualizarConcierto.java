@@ -8,6 +8,7 @@ import com.lausebas.eventmng.model.Artista;
 import com.lausebas.eventmng.services.ServicioArtista;
 import com.lausebas.eventmng.services.ServicioEvento;
 import java.awt.Color;
+import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
 import javax.swing.JOptionPane;
@@ -20,10 +21,10 @@ public class ActualizarConcierto extends javax.swing.JFrame {
 
     ServicioEvento servicioEvento;
     ServicioArtista servicioArtista;
-    
+
     public ActualizarConcierto(ServicioEvento servicioEvento, ServicioArtista servicioArtista) {
         initComponents();
-         setLocationRelativeTo(this);
+        setLocationRelativeTo(this);
         setResizable(false);
         this.servicioEvento = servicioEvento;
         this.servicioArtista = servicioArtista;
@@ -141,9 +142,12 @@ public class ActualizarConcierto extends javax.swing.JFrame {
         lblPrecio.setForeground(new java.awt.Color(5, 44, 77));
         lblPrecio.setText("Precio");
 
+        dtcFecha.setEnabled(false);
+
         cmbArtista.setBackground(new java.awt.Color(5, 44, 77));
         cmbArtista.setFont(new java.awt.Font("URW Gothic", 0, 12)); // NOI18N
         cmbArtista.setForeground(new java.awt.Color(185, 209, 226));
+        cmbArtista.setEnabled(false);
         cmbArtista.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cmbArtistaActionPerformed(evt);
@@ -286,11 +290,12 @@ public class ActualizarConcierto extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-  public void llenarComboBox(){
-    for (Artista nArtista : servicioArtista.listarArtistas()){
-        cmbArtista.addItem(nArtista.getNombre());
+  public void llenarComboBox() {
+       cmbArtista.removeAllItems();
+        for (Artista nArtista : servicioArtista.listarArtistas()) {
+            cmbArtista.addItem(nArtista.getNombre());
+        }
     }
-  }
     private void txtFBuscarConciertoMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtFBuscarConciertoMousePressed
         txtFBuscarConcierto.setText("");
         txtFBuscarConcierto.setForeground(Color.black);        // TODO add your handling code here:
@@ -321,17 +326,44 @@ public class ActualizarConcierto extends javax.swing.JFrame {
     }//GEN-LAST:event_txtFTipoMusicaActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-
+        try {
+            servicioEvento.actualizarConcierto(servicioEvento.buscarConcierto(txtFNombre.getText()),
+                    servicioArtista.buscarArtista(cmbArtista.getSelectedItem().toString()),
+                    Integer.parseInt(txtFNLocalidades.getText()),
+                    txtFTipoMusica.getText(),
+                    dtcFecha.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate(),
+                    txtFUbicacion.getText(),
+                    Double.parseDouble(txtFPrecio.getText()));
+            JOptionPane.showMessageDialog(this, "El Concierto se actualizo con éxito.");
+            
+             txtFNombre.setText("");
+             txtFUbicacion.setText("");
+             dtcFecha.setDate(null);
+             txtFPrecio.setText("");
+             txtFTipoMusica.setText("");
+             txtFNLocalidades.setText("");
+             txtFBuscarConcierto.setText("");
+             
+            txtFUbicacion.setEditable(false);
+            dtcFecha.setEnabled(false);
+            txtFPrecio.setEditable(false);
+            txtFTipoMusica.setEditable(false);
+            txtFNLocalidades.setEditable(false);
+            cmbArtista.setEnabled(false);
+            
+        } catch (IllegalArgumentException e) {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        }
     }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
         String nombre = txtFBuscarConcierto.getText();
         llenarComboBox();
-        try{
+        try {
             txtFNombre.setText(servicioEvento.buscarConcierto(nombre).getNombre());
             dtcFecha.setDate(Date.from(
-                               servicioEvento.buscarConcierto(nombre).getFecha().
-                               atStartOfDay(ZoneId.systemDefault()).toInstant()));
+                    servicioEvento.buscarConcierto(nombre).getFecha().
+                            atStartOfDay(ZoneId.systemDefault()).toInstant()));
             txtFUbicacion.setText(servicioEvento.buscarConcierto(nombre).getUbicacion());
             txtFPrecio.setText(String.valueOf(servicioEvento.buscarConcierto(nombre).getPrecioEntrada()));
             txtFTipoMusica.setText(servicioEvento.buscarConcierto(nombre).getTipoMusica());
@@ -341,8 +373,9 @@ public class ActualizarConcierto extends javax.swing.JFrame {
             dtcFecha.setEnabled(true);
             txtFPrecio.setEditable(true);
             txtFTipoMusica.setEditable(true);
-        }
-        catch (IllegalArgumentException e) {
+            txtFNLocalidades.setEditable(true);
+            cmbArtista.setEnabled(true);
+        } catch (IllegalArgumentException e) {
             JOptionPane.showMessageDialog(this, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnBuscarActionPerformed
@@ -350,7 +383,6 @@ public class ActualizarConcierto extends javax.swing.JFrame {
     private void cmbArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmbArtistaActionPerformed
 
     }//GEN-LAST:event_cmbArtistaActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;

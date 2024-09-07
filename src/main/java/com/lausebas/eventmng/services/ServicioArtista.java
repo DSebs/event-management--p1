@@ -50,12 +50,15 @@ public class ServicioArtista {
     }
     
     public Artista buscarArtista(String nombre){
+         if (nombre == null || nombre.isEmpty()) {
+            throw new IllegalArgumentException("El nombre del evento no puede estar vacío o ser null.");
+        }
         for (Artista artista : artistas) {
             if(artista.getNombre().equalsIgnoreCase(nombre)){
             return artista;
         }
     }
-         return null;
+           throw new IllegalArgumentException("No se encontró un evento con el nombre proporcionado");
     }
     
      public void eliminarArtista(Artista artista) {

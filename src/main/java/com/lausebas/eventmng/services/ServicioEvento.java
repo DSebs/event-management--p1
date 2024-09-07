@@ -132,7 +132,7 @@ public class ServicioEvento {
         }
 
         for (Evento e : eventos) {
-            if (e.getNombre().equalsIgnoreCase(concierto.getNombre())) {
+            if (e instanceof Concierto && e.getNombre().equalsIgnoreCase(concierto.getNombre())) {
                 throw new IllegalArgumentException("Ya existe un concierto con el mismo nombre.");
             }
         }
@@ -146,7 +146,7 @@ public class ServicioEvento {
         }
 
         for (Evento e : eventos) {
-            if (e.getNombre().equalsIgnoreCase(feriaGastro.getNombre())) {
+            if (e instanceof FeriaGastronomica && e.getNombre().equalsIgnoreCase(feriaGastro.getNombre())) {
                 throw new IllegalArgumentException("Ya existe una feria con el mismo nombre.");
             }
         }

@@ -382,12 +382,12 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnActualizarFeriaActionPerformed
 
     private void mnIActualizarArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIActualizarArtistaActionPerformed
-        ActualizarArtista actualizarArtist = new ActualizarArtista();
+        ActualizarArtista actualizarArtist = new ActualizarArtista(servicioArtista);
         actualizarArtist.setVisible(true);
     }//GEN-LAST:event_mnIActualizarArtistaActionPerformed
 
     private void mnIEliminarArtistaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIEliminarArtistaActionPerformed
-       EliminarArtista eliminarArtist = new EliminarArtista();
+       EliminarArtista eliminarArtist = new EliminarArtista(servicioArtista);
        eliminarArtist.setVisible(true);
     }//GEN-LAST:event_mnIEliminarArtistaActionPerformed
 
