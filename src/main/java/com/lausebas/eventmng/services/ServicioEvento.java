@@ -17,6 +17,7 @@ public class ServicioEvento {
 
     public ServicioEvento() {
         eventos = new ArrayList();
+        servicioObserver = ServicioObserver.getInstance();
     }
 
     public Concierto crearConcierto(Artista artista, int localidades, String tipoMusica, String nombre, LocalDate fecha, String ubicacion, double precioEntrada) {
@@ -135,8 +136,8 @@ public class ServicioEvento {
                 throw new IllegalArgumentException("Ya existe un concierto con el mismo nombre.");
             }
         }
-
         eventos.add(concierto);
+        servicioObserver.notificarCambio();
     }
 
     public void añadirFeriaGastro(FeriaGastronomica feriaGastro) {
@@ -151,6 +152,7 @@ public class ServicioEvento {
         }
 
         eventos.add(feriaGastro);
+        servicioObserver.notificarCambio();
     }
 
     public Concierto buscarConcierto(String nombre) {

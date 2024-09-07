@@ -6,23 +6,28 @@ package com.lausebs.eventmng.view;
 
 import com.lausebas.eventmng.model.FeriaGastronomica;
 import com.lausebas.eventmng.services.ServicioEvento;
+import com.lausebas.eventmng.services.ServicioObserver;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author estigia
  */
-public class ListarFeriaGastro extends javax.swing.JFrame {
+public class ListarFeriaGastro extends javax.swing.JFrame implements Notificable {
 
-   private ServicioEvento servicioEvento;
-   DefaultTableModel model = new DefaultTableModel();
-   
-    public ListarFeriaGastro(ServicioEvento servicioEvento) {
+    private ServicioEvento servicioEvento;
+    private ServicioObserver servicioObserver;
+    DefaultTableModel model = new DefaultTableModel();
+
+    public ListarFeriaGastro(ServicioEvento servicioEvento, ServicioObserver servicioObserver) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
         setModelo();
         this.servicioEvento = servicioEvento;
+        this.servicioObserver = ServicioObserver.getInstance();
+        servicioObserver.añadirigInteresadas(this);
+        listar();
     }
 
     /**
@@ -37,7 +42,6 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
         lblTitulo = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFeria = new javax.swing.JTable();
-        btnListar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -71,16 +75,6 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tblFeria);
 
-        btnListar.setBackground(new java.awt.Color(5, 44, 77));
-        btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
-        btnListar.setForeground(new java.awt.Color(255, 255, 255));
-        btnListar.setText("Listar");
-        btnListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListarActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,10 +86,7 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 565, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(114, 114, 114)
-                        .addComponent(lblTitulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(255, 255, 255)
-                        .addComponent(btnListar)))
+                        .addComponent(lblTitulo)))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -105,39 +96,41 @@ public class ListarFeriaGastro extends javax.swing.JFrame {
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(32, 32, 32)
-                .addComponent(btnListar)
                 .addContainerGap(36, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    private void setModelo(){
-        String[] cabecera = {"Nombre","Fecha","Ubicacion","Precio","Tipo de Cocina","N Stands"};
+    private void setModelo() {
+        String[] cabecera = {"Nombre", "Fecha", "Ubicacion", "Precio", "Tipo de Cocina", "N Stands"};
         model.setColumnIdentifiers(cabecera);
         tblFeria.setModel(model);
     }
-
-    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
-        model.setRowCount(0); 
-        Object [] datos = new Object[model.getColumnCount()];
+    
+    private void listar(){
+         model.setRowCount(0);
         for (FeriaGastronomica feriaGastro : servicioEvento.listarFeriasGastronomicas()) {
-           datos[0] = feriaGastro.getNombre();
-           datos[1] =feriaGastro.getFecha().toString();
-           datos[2] = feriaGastro.getUbicacion();
-           datos[3] = String.format("%.2f", feriaGastro.getPrecioEntrada());
-           datos[4] = feriaGastro.getTipoCocina();
-           datos[5] = feriaGastro.getNumStands();
-           model.addRow(datos);
+            Object[] datos = new Object[model.getColumnCount()];
+            datos[0] = feriaGastro.getNombre();
+            datos[1] = feriaGastro.getFecha().toString();
+            datos[2] = feriaGastro.getUbicacion();
+            datos[3] = String.format("%.2f", feriaGastro.getPrecioEntrada());
+            datos[4] = feriaGastro.getTipoCocina();
+            datos[5] = feriaGastro.getNumStands();
+            model.addRow(datos);
         }
-        tblFeria.setModel(model);
-    }//GEN-LAST:event_btnListarActionPerformed
+    }
+
+    @Override
+    public void avisoCambio() {
+        listar();
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnListar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblFeria;
     // End of variables declaration//GEN-END:variables
+
 }

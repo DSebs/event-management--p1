@@ -16,11 +16,19 @@ import java.util.ArrayList;
  */
 public class ServicioObserver {
     
+    private static ServicioObserver instanciaObserver;
     private ArrayList <Notificable> igInteresadas;
    
     
-    public ServicioObserver() {
+    private ServicioObserver() {
         igInteresadas = new ArrayList();
+    }
+    
+    public static synchronized ServicioObserver getInstance() {
+        if (instanciaObserver == null) {
+            instanciaObserver = new ServicioObserver();
+        }
+        return instanciaObserver;
     }
     
     
@@ -34,8 +42,6 @@ public class ServicioObserver {
                 igInteresada.avisoCambio();
             }
     }
-    
-    
     
     public void eliminarigInteresadas(Notificable igInteresada){
         igInteresadas.remove(igInteresada);

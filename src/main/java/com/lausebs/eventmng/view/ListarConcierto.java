@@ -6,24 +6,29 @@ package com.lausebs.eventmng.view;
 
 import com.lausebas.eventmng.model.Concierto;
 import com.lausebas.eventmng.services.ServicioEvento;
+import com.lausebas.eventmng.services.ServicioObserver;
 import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author estigia
  */
-public class ListarConcierto extends javax.swing.JFrame {
+public class ListarConcierto extends javax.swing.JFrame implements Notificable {
 
     private ServicioEvento servicioEvento;
+    private ServicioObserver servicioObserver;
     DefaultTableModel model = new DefaultTableModel();
 
        
-    public ListarConcierto(ServicioEvento servicioEvento) {
+    public ListarConcierto(ServicioEvento servicioEvento, ServicioObserver servicioObserver) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
         setModelo();
         this.servicioEvento = servicioEvento;
+        this.servicioObserver = servicioObserver;
+        servicioObserver.añadirigInteresadas(this);
+        listar();
     }
 
     /**
@@ -36,7 +41,6 @@ public class ListarConcierto extends javax.swing.JFrame {
     private void initComponents() {
 
         lblTitulo = new javax.swing.JLabel();
-        btnListar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblFeria = new javax.swing.JTable();
 
@@ -47,16 +51,6 @@ public class ListarConcierto extends javax.swing.JFrame {
         lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblTitulo.setText("Listado de Conciertos");
         lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
-
-        btnListar.setBackground(new java.awt.Color(5, 44, 77));
-        btnListar.setFont(new java.awt.Font("URW Gothic", 1, 14)); // NOI18N
-        btnListar.setForeground(new java.awt.Color(255, 255, 255));
-        btnListar.setText("Listar");
-        btnListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnListarActionPerformed(evt);
-            }
-        });
 
         tblFeria.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,29 +80,24 @@ public class ListarConcierto extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 21, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(19, 19, 19))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(123, 123, 123))
             .addGroup(layout.createSequentialGroup()
-                .addGap(256, 256, 256)
-                .addComponent(btnListar)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(22, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(123, 123, 123))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 555, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
-                .addComponent(btnListar)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         pack();
@@ -118,13 +107,12 @@ public class ListarConcierto extends javax.swing.JFrame {
         model.setColumnIdentifiers(cabecera);
         tblFeria.setModel(model);
     }
-
-    private void btnListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnListarActionPerformed
+    private void listar(){
         model.setRowCount(0);
-        Object [] datos = new Object[model.getColumnCount()];
         for (Concierto concierto : servicioEvento.listarConciertos()) {
+            Object[] datos = new Object[model.getColumnCount()];
            datos[0] = concierto.getNombre();
-           datos[1] =concierto.getFecha().toString();
+           datos[1] = concierto.getFecha().toString();
            datos[2] = concierto.getUbicacion();
            datos[3] = String.format("%.2f", concierto.getPrecioEntrada());
            datos[4] = concierto.getTipoMusica();
@@ -132,14 +120,19 @@ public class ListarConcierto extends javax.swing.JFrame {
            datos[6] = concierto.getArtista().getNombre();
            model.addRow(datos);
         }
-        tblFeria.setModel(model);
-    }//GEN-LAST:event_btnListarActionPerformed
+             
+    }
+       @Override
+    public void avisoCambio() {
+        listar();
+    }
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnListar;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JTable tblFeria;
     // End of variables declaration//GEN-END:variables
+
+ 
 }

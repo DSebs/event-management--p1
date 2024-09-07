@@ -6,6 +6,7 @@
 
 import com.lausebas.eventmng.services.ServicioArtista;
 import com.lausebas.eventmng.services.ServicioEvento;
+import com.lausebas.eventmng.services.ServicioObserver;
 import javax.swing.JOptionPane;
 /**
  *
@@ -15,6 +16,7 @@ public class FramePrincipal extends javax.swing.JFrame {
 
     private ServicioEvento servicioEvento;
     private ServicioArtista servicioArtista;
+    private ServicioObserver servicioObserver;
    
     
     public FramePrincipal() {
@@ -23,6 +25,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         setResizable(false);
         servicioEvento = new ServicioEvento();
         servicioArtista = new ServicioArtista();
+        servicioObserver = ServicioObserver.getInstance();
     }
 
     /**
@@ -329,7 +332,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIAñadirConciertoActionPerformed
 
     private void mnIListarConciertoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarConciertoActionPerformed
-        ListarConcierto listarConcierto = new ListarConcierto(servicioEvento);
+        ListarConcierto listarConcierto = new ListarConcierto(servicioEvento, servicioObserver);
         listarConcierto.setVisible(true);// TODO add your handling code here:
     }//GEN-LAST:event_mnIListarConciertoActionPerformed
 
@@ -354,7 +357,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIEliminarFeriaActionPerformed
 
     private void mnIListarFeriasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIListarFeriasActionPerformed
-    ListarFeriaGastro listaFeria = new ListarFeriaGastro(servicioEvento); 
+    ListarFeriaGastro listaFeria = new ListarFeriaGastro(servicioEvento, servicioObserver); 
     listaFeria.setVisible(true);
     }//GEN-LAST:event_mnIListarFeriasActionPerformed
 
