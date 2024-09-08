@@ -4,19 +4,22 @@
  */
 package com.lausebs.eventmng.view;
 
+import com.lausebas.eventmng.services.ServicioSingleton;
+
 /**
  *
  * @author estigia
  */
 public class InfoEmpresa extends javax.swing.JFrame {
 
-    /**
-     * Creates new form InfoEmpresa
-     */
-    public InfoEmpresa() {
+    private ServicioSingleton servicioSingleton;
+    
+    public InfoEmpresa(ServicioSingleton servicioSingleton) {
         initComponents();
         setLocationRelativeTo(this);
         setResizable(false);
+        this.servicioSingleton = servicioSingleton;
+        llenarInfo();
     }
 
     /**
@@ -28,57 +31,164 @@ public class InfoEmpresa extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblTitulo = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        txtNombre = new javax.swing.JTextField();
+        txtUbicacion = new javax.swing.JTextField();
+        txtCorreo = new javax.swing.JTextField();
+        txtAñoFundacion = new javax.swing.JTextField();
+        lblNombre = new javax.swing.JLabel();
+        lblUbicacion = new javax.swing.JLabel();
+        lblCorreo = new javax.swing.JLabel();
+        lblFundacion = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+
+        lblTitulo.setFont(new java.awt.Font("URW Gothic", 1, 48)); // NOI18N
+        lblTitulo.setForeground(new java.awt.Color(5, 44, 77));
+        lblTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitulo.setText("Sobre Nosotros");
+        lblTitulo.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder(new java.awt.Color(0, 0, 51), new java.awt.Color(0, 0, 51)));
+
+        txtNombre.setEditable(false);
+        txtNombre.setBackground(new java.awt.Color(185, 209, 226));
+        txtNombre.setFont(new java.awt.Font("Ubuntu Sans", 1, 14)); // NOI18N
+        txtNombre.setForeground(new java.awt.Color(0, 0, 51));
+        txtNombre.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        txtUbicacion.setEditable(false);
+        txtUbicacion.setBackground(new java.awt.Color(185, 209, 226));
+        txtUbicacion.setFont(new java.awt.Font("Ubuntu Sans", 1, 14)); // NOI18N
+        txtUbicacion.setForeground(new java.awt.Color(0, 0, 51));
+        txtUbicacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        txtCorreo.setEditable(false);
+        txtCorreo.setBackground(new java.awt.Color(185, 209, 226));
+        txtCorreo.setFont(new java.awt.Font("Ubuntu Sans", 1, 14)); // NOI18N
+        txtCorreo.setForeground(new java.awt.Color(0, 0, 51));
+        txtCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+
+        txtAñoFundacion.setEditable(false);
+        txtAñoFundacion.setBackground(new java.awt.Color(185, 209, 226));
+        txtAñoFundacion.setFont(new java.awt.Font("Ubuntu Sans", 1, 14)); // NOI18N
+        txtAñoFundacion.setForeground(new java.awt.Color(0, 0, 51));
+        txtAñoFundacion.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAñoFundacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtAñoFundacionActionPerformed(evt);
+            }
+        });
+
+        lblNombre.setFont(new java.awt.Font("URW Gothic", 2, 10)); // NOI18N
+        lblNombre.setForeground(new java.awt.Color(5, 44, 77));
+        lblNombre.setText("Nombre");
+
+        lblUbicacion.setFont(new java.awt.Font("URW Gothic", 2, 10)); // NOI18N
+        lblUbicacion.setForeground(new java.awt.Color(5, 44, 77));
+        lblUbicacion.setText("Sede Principal");
+
+        lblCorreo.setFont(new java.awt.Font("URW Gothic", 2, 10)); // NOI18N
+        lblCorreo.setForeground(new java.awt.Color(5, 44, 77));
+        lblCorreo.setText("Correo");
+
+        lblFundacion.setFont(new java.awt.Font("URW Gothic", 2, 10)); // NOI18N
+        lblFundacion.setForeground(new java.awt.Color(5, 44, 77));
+        lblFundacion.setText("Año de Fundacion");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(90, 90, 90)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtAñoFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(178, 178, 178)
+                        .addComponent(lblCorreo))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(180, 180, 180)
+                        .addComponent(lblNombre))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(163, 163, 163)
+                        .addComponent(lblUbicacion))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(154, 154, 154)
+                        .addComponent(lblFundacion)))
+                .addGap(90, 90, 90))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(lblNombre)
+                .addGap(2, 2, 2)
+                .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17)
+                .addComponent(lblUbicacion)
+                .addGap(2, 2, 2)
+                .addComponent(txtUbicacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblCorreo)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txtCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(lblFundacion)
+                .addGap(2, 2, 2)
+                .addComponent(txtAñoFundacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(25, 25, 25))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 418, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(53, 53, 53))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(lblTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(InfoEmpresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(InfoEmpresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(InfoEmpresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(InfoEmpresa.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new InfoEmpresa().setVisible(true);
-            }
-        });
+    private void llenarInfo(){
+        txtNombre.setText(servicioSingleton.getEveInfo().getNombre());
+        txtUbicacion.setText(servicioSingleton.getEveInfo().getUbicacion());
+        txtCorreo.setText(servicioSingleton.getEveInfo().getCorreo());
+        txtAñoFundacion.setText(String.valueOf(servicioSingleton.getEveInfo().getAñoFundacion()));
     }
+    private void txtAñoFundacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtAñoFundacionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtAñoFundacionActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lblCorreo;
+    private javax.swing.JLabel lblFundacion;
+    private javax.swing.JLabel lblNombre;
+    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblUbicacion;
+    private javax.swing.JTextField txtAñoFundacion;
+    private javax.swing.JTextField txtCorreo;
+    private javax.swing.JTextField txtNombre;
+    private javax.swing.JTextField txtUbicacion;
     // End of variables declaration//GEN-END:variables
 }

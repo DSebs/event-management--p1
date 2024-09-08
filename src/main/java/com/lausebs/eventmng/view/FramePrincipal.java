@@ -7,6 +7,7 @@
 import com.lausebas.eventmng.services.ServicioArtista;
 import com.lausebas.eventmng.services.ServicioEvento;
 import com.lausebas.eventmng.services.ServicioObserver;
+import com.lausebas.eventmng.services.ServicioSingleton;
 import javax.swing.JOptionPane;
 /**
  *
@@ -17,6 +18,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     private ServicioEvento servicioEvento;
     private ServicioArtista servicioArtista;
     private ServicioObserver servicioObserver;
+    private ServicioSingleton servicioSingleton;
    
     
     public FramePrincipal() {
@@ -26,6 +28,7 @@ public class FramePrincipal extends javax.swing.JFrame {
         servicioEvento = new ServicioEvento();
         servicioArtista = new ServicioArtista();
         servicioObserver = ServicioObserver.getInstance();
+        servicioSingleton = new ServicioSingleton();
     }
 
     /**
@@ -392,7 +395,7 @@ public class FramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_mnIEliminarArtistaActionPerformed
 
     private void mnIInfoEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnIInfoEmpresaActionPerformed
-        InfoEmpresa infoEmpresa = new InfoEmpresa();
+        InfoEmpresa infoEmpresa = new InfoEmpresa(servicioSingleton);
         infoEmpresa.setVisible(true);
     }//GEN-LAST:event_mnIInfoEmpresaActionPerformed
 
