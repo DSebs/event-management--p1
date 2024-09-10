@@ -90,6 +90,20 @@ Representa un artista, relacionada  a la clase Concierto.
 
 ---
 
+### Eve - clase singleton
+Representa la clase que contiene la informacion de la empresa
+
+#### Atributos
++ **nombre:** Representa el nombre de la empresa.
++ **Ubicacion:** Representa la ubicacion de la sede de la empresa.
++ **Correo:** Representa el correo empresarial de la empresa.
++ **Año de Fundacion:** Representa el año en el que se fundo la empresa.
+
+### Metodos
++ **getEve:** Retorna la unica instancia de la empresa, en caso de no haber una se crea y se retorna.
+
+---
+
 ### Expandible  - interfaz
 Define si los stands de una feria pueden expandirse a razon de ser más grandes, de manera que alojen más personas.    
 
